@@ -155,7 +155,6 @@ const Main = () => {
                 </div>
               </div>
             )
-
           })
         }
 

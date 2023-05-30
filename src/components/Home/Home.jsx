@@ -47,7 +47,7 @@ const Home = () => {
               <input type="date"/>
             </div>
           </div>
-
+          {/* oke */}
           <div className="priceInput">
             <div className="label_total flex">
               <label htmlFor="price">Max price:</label>
