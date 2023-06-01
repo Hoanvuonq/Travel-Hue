@@ -29,7 +29,7 @@
   content: "";
   background: var(--SecondaryColor);
   height: 5px;
-  width: 120px;
+  width: 80px;
   right: 0;
   bottom: 5px;
   z-index: -1;
@@ -40,7 +40,7 @@
 }
 .main .secContent .singleDestination {
   height: 100%;
-  display: grid;
+  /* display: grid; */
   row-gap: 10px;
   padding: 1rem;
   border-radius: 10px;
@@ -103,6 +103,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  font-weight: 800;
+  font-size: 9px;
 }
 .main .secContent .singleDestination .cardInfo .fees .grade small {
   text-align: center;
@@ -110,7 +112,7 @@
   border-radius: 1rem;
   color: var(--whiteColor);
   padding: 1px 10px;
-  font-size: 10px;
+  
 }
 .main .secContent .singleDestination .cardInfo .fees .price {
   font-size: 2rem;
@@ -132,13 +134,22 @@
   align-self: center;
   font-size: 18px;
 }
+.img-star {
+  width: 22px !important;
+}
+.yellow {
+  color: yellow;
+}
+
+
+
 
 @media screen and (min-width: 500px) {
   .title {
     font-size: 1.5rem;
   }
   .title::after {
-    width: 155px !important;
+    width: 103px !important;
   }
   .secContent {
     grid-template-columns: repeat(2, 1fr);
