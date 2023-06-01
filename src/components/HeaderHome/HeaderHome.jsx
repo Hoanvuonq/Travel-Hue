@@ -1,78 +1,72 @@
-import React, {useEffect} from 'react'
+import React, { useState, useEffect } from 'react';
 import './HeaderHome.css'
 
 
 import Navbar from '../Navbar/Navbar';
-import Bg from '../../Assets/bg.jpg'
+import Bg1 from '../../Assets/bg1.jpg'
+import Bg2 from '../../Assets/bg2.jpg'
+import Bg3 from '../../Assets/bg3.jpg'
+import Bg4 from '../../Assets/bg4.jpg'
+import Bg5 from '../../Assets/bg5.jpg'
 
-import Aos from 'aos'
-import 'aos/dist/aos.css'
+
+const images = [
+  {
+    src: Bg1,
+    caption: 'Huế - Đẹp và Lịch sử',
+  },
+  {
+    src: Bg2,
+    caption: 'Những cung đường thơ mộng',
+  },
+  {
+    src: Bg3,
+    caption: 'Mùa xuân Huế - Sắc hoa nở rực rỡ',
+  },
+  {
+    src: Bg4,
+    caption: 'Thành phố cổ Huế - Di sản văn hóa',
+  },
+  {
+    src: Bg5,
+    caption: 'Huế khi hoàng hôn buông xuống   ',
+  },
+];
+
+
 
 const HeaderHome = () => {
-  useEffect(()=>{
-    Aos.init({duration: 2000})
-  }, [])
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [currentSlide]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide === 0 ? images.length - 1 : prevSlide - 1));
+  };
 
   return (
     <>
     <Navbar />
       <section className='header-home'>
       <div className="overlay"></div>
-      <img className='bg-slide' src={Bg} alt="" />
-
-      {/* <div className="homeContent container">
-        <div className="textDiv">
-          <span data-aos="fade-up" className="smallText">
-            Our Packages
-          </span>
-          <h1 data-aos="fade-up" className='homeTitle'>
-            Search your Holiday
-          </h1>
+      <img className="bg-slide" src={images[currentSlide].src} alt="" />
+      <div className="caption">{images[currentSlide].caption}</div>
+      <div className="controls">
+          <button onClick={prevSlide} className="prev-btn">&#8249;</button>
+          <button onClick={nextSlide} className="next-btn">&#8250;</button>
         </div>
-
-        <div data-aos="fade-up" className="cardDiv grid">
-          <div className="destinationInput">
-            <label htmlFor="city">Search your destination.</label>
-            <div className="input flex">
-              <input type="text" placeholder='Enter name here...'/>
-              <GrLocation className="icon"/>
-            </div>
-          </div>
-          <div className="dateInput">
-            <label htmlFor="date">Enter the number of days</label>
-            <div className="input flex">
-              <input type="number" id="date " />
-            </div>
-          </div>
-          <div className="priceInput">
-            <div className="label_total flex">
-              <label htmlFor="price">Max price:</label>
-              <h3 className='total'>$5000</h3>
-            </div>
-            <div className="input flex">
-              <input type="range" max="5000" min="1000" />
-            </div>
-          </div>
-
-          <div className="searchOptions flex">
-            <HiFilter className="icon"/>
-            <span>MORE FILTERS</span>
-          </div>
-        </div>
-
-        <div data-aos="fade-up" className="homeFooterIcons flex">
-          <div className="rightIcons">
-            <FiFacebook className="icon"/>
-            <AiOutlineInstagram className="icon"/>
-            <FaTripadvisor className="icon"/>
-          </div>
-
-          <div className="leftIcons">
-            <BsListTask className="icon"/>
-            <TbApps className="icon"/>
-          </div>
-        </div>
-      </div> */}
       </section>
     </>
   )
