@@ -28,7 +28,7 @@ const Data = [
     id:1,
     imgSrc: img,
     destTitle: 'Thien Mu Pagoda',
-    location: 'Buddhist Temple in Hue City',
+    location: 'FG3V+6X Hue City, Thua Thien Hue',
     grade: 'Sights & Landmarks',
     fees: '4,5',
     description: 'Thien Mu Pagoda, also known as Linh Mu Pagoda, is an ancient pagoda located on Ha Khe hill, on the left bank of the Perfume River, about 5 km west of Hue city center. Thien Mu Pagoda was officially established in the year of Tan Suu, during the reign of Lord Tien Nguyen Hoang - the first Nguyen Lord in Dang Trong.'
@@ -38,7 +38,7 @@ const Data = [
     id:2,
     imgSrc: img2,
     destTitle: 'Vong Canh Hill',
-    location: 'Parks in Hue City',
+    location: 'P102 Huyen Tran Princess, Thuy Bieu, Hue City, Thua Thien Hue',
     grade: 'Sights & Landmarks',
     fees: '4,6',
     description: 'Vong Canh Hill is a 43m high hill in the southwest of Hue city, the foothills adjacent to the Perfume River. It is located in the middle of the mausoleum of the Nguyen kings and opposite the Hon Chen Palace, which was established in ancient times in the opposite bank.'
@@ -49,7 +49,7 @@ const Data = [
     id:3,
     imgSrc: img3,
     destTitle: 'Khai Dinh Mausoleum',
-    location: 'Complex of Hue Monuments',
+    location: 'Thuy Bang commune, Huong Thuy district, Hue, Thua Thien Hue 530000',
     grade: 'Sights & Landmarks',
     fees: '4,4',
     description: 'The overall of the Mausoleum is a rectangular floating block reaching 127 steps high. Mountains, hills and streams of a large area around the Mausoleum are used as feng shui elements: criminal record, post-occipital, left dragon, right white tiger, clear path, water convergence, giving Khai Dinh mausoleum a natural landscape. majestic nature.'
@@ -59,7 +59,7 @@ const Data = [
     id:4,
     imgSrc: img4,
     destTitle: 'Tomb of Tu Duc',
-    location: 'Historic Landmarks in Hue City',
+    location: 'Dong Ba Bridge, Thuong Village, Hue City, Thua Thien Hue 530000',
     grade: 'Sights & Landmarks',
     fees: '4,4',
     description: 'Tu Duc Tomb is a complex of architectural works, including Tu Duc burial place, located in a narrow valley in Duong Xuan Thuong village, Cu Chanh canton, now Thuong Ba village, Thuy Xuan ward, city. Hue. When it was first built, Tu Duc named it Khiem Cung.'
@@ -212,7 +212,7 @@ const Main = () => {
             return(
               <div key={id} data-aos="fade-up" className="singleDestination">
                 <div className="imageDiv">
-                  <img src={imgSrc} alt={destTitle} />
+                  <img  src={imgSrc} alt={destTitle} />
                 </div>
 
                 <div className="cardInfo">
