@@ -1,0 +1,84 @@
+:root {
+  --PrimaryColor: hsl(199, 100%, 33%);
+  --SecondaryColor: hsl(187, 85%, 43%);
+  --GradientColor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --whiteColorDeam: hsl(0, 0%, 93%);
+  --greyText: rgb(190, 190, 190);
+  --inputColor: rgb(239, 239, 239);
+  --bodyColor: rgb(240, 240, 240);
+  --cardBG: rgb(225, 225, 255);
+}
+
+
+.header-home {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.header-home .overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  mix-blend-mode: hard-light;
+}
+
+.header-home .bg-slide {
+  margin-top: 90px;
+  border-radius: 50px;
+  padding: 0 10px;
+  height: 540px;
+}
+
+.header-home .caption {
+  position: absolute;
+  top: 93%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-family: 'Harrington', cursive;
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.header-home .controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.header-home .prev-btn,
+.header-home .next-btn {
+  background-color: #ddd;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  color: #555;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.header-home .prev-btn:hover,
+.header-home .next-btn:hover {
+  background-color: #aaa;
+  color: #fff;
+}
+

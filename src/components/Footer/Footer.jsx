@@ -60,7 +60,7 @@ const Footer = () => {
           <div className="footerLinks grid">
             <div data-aos="fade-up" data-aos-duration="3000"className="linkGroup">
               <span className="groupTitle">
-                OUR AGENCY
+                ABOUT US  
               </span>
 
               <li className="footerList flex">
@@ -69,19 +69,19 @@ const Footer = () => {
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Insurance
+                Blogs
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Agency
+                Planning
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Tourism
+                Tourism 
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Payment
+                Gift Certificate
               </li>
             </div>
 
@@ -119,28 +119,28 @@ const Footer = () => {
 
             <div data-aos="fade-up" data-aos-duration="5000"className="linkGroup">
               <span className="groupTitle">
-                LAST MINUTE
+                TERMS OF USE
               </span>
 
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                London
+                Terms of use
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                California
+                Privacy Policy
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Indonesia
+                Cookie Policy
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Europe
+                Software 
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Oceania
+                Rule
               </li>
             </div>
 
