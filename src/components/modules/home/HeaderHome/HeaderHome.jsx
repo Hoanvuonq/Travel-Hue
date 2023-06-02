@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import './HeaderHome.css'
 
 
-import Navbar from '../Navbar/Navbar';
-import Bg1 from '../../Assets/bg1.jpg'
-import Bg2 from '../../Assets/bg2.jpg'
-import Bg3 from '../../Assets/bg3.jpg'
-import Bg4 from '../../Assets/bg4.jpg'
-import Bg5 from '../../Assets/bg5.jpg'
+import Bg1 from '../../../../Assets/bg1.jpg'
+import Bg2 from '../../../../Assets/bg2.jpg'
+import Bg3 from '../../../../Assets/bg3.jpg'
+import Bg4 from '../../../../Assets/bg4.jpg'
+import Bg5 from '../../../../Assets/bg5.jpg'
+import Navbar from '../../../../layouts/partials/Navbar/Navbar';
 
 
 const images = [
@@ -58,12 +58,12 @@ const HeaderHome = () => {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       <section className='header-home'>
-      <div className="overlay"></div>
-      <img className="bg-slide" src={images[currentSlide].src} alt="" />
-      <div className="caption">{images[currentSlide].caption}</div>
-      <div className="controls">
+        <div className="overlay"></div>
+        <img className="bg-slide" src={images[currentSlide].src} alt="" />
+        <div className="caption">{images[currentSlide].caption}</div>
+        <div className="controls">
           <button onClick={prevSlide} className="prev-btn">&#8249;</button>
           <button onClick={nextSlide} className="next-btn">&#8250;</button>
         </div>

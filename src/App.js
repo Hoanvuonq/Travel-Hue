@@ -1,20 +1,14 @@
-import React, { Fragment } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import React from 'react';
 import './App.css';
-import Plan from './components/Plan/Plan';
-import Home from './components/Home/Home';
+
+import NextPages from './pages';
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <Fragment>
-        <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/Plan" element={<Plan />} />
-        </Routes>
-      </Fragment>
-    </BrowserRouter>
+    <>
+      <NextPages />
+    </>
   );
 }
 
