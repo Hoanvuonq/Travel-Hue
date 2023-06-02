@@ -71,3 +71,26 @@
     }
   }
 }
+
+@media screen and (max-width: 640px) {
+  .wrap {
+    padding-top: 100px;
+    height: auto;
+  }
+  .wrapForm {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 90vw;
+    .formForm {
+      margin-top: 30px;
+    }
+    .formData {
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    .input > input {
+      width: 100%;
+    }
+  }
+}
