@@ -1,27 +1,28 @@
 import React, {useEffect}from 'react'
-import './Main.css'
 import {HiOutlineClipboardCheck, HiOutlineLocationMarker } from 'react-icons/hi'
 import { faStar as SolidStar, faStarHalfAlt as HalfStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import img from '../../Assets/img(1).jpg'
-import img2 from '../../Assets/img(2).jpg'
-import img3 from '../../Assets/img(3).jpg'
-import img4 from '../../Assets/img(4).jpg'
-import img5 from '../../Assets/img(5).jpg'
-import img6 from '../../Assets/img(6).jpg'
-import img7 from '../../Assets/img(7).jpg'
-import img8 from '../../Assets/img(8).jpg'
-import img9 from '../../Assets/img(9).jpg'
-import img10 from '../../Assets/img(10).jpg'
-import img11 from '../../Assets/img(11).jpg'
-import img12 from '../../Assets/img(12).jpg'
-import img13 from '../../Assets/img(13).jpg'
-import img14 from '../../Assets/img(14).jpg'
-import img15 from '../../Assets/img(15).jpg'
+
+import img from '../../../../Assets/img(1).jpg'
+import img2 from '../../../../Assets/img(2).jpg'
+import img3 from '../../../../Assets/img(3).jpg'
+import img4 from '../../../../Assets/img(4).jpg'
+import img5 from '../../../../Assets/img(5).jpg'
+import img6 from '../../../../Assets/img(6).jpg'
+import img7 from '../../../../Assets/img(7).jpg'
+import img8 from '../../../../Assets/img(8).jpg'
+import img9 from '../../../../Assets/img(9).jpg'
+import img10 from '../../../../Assets/img(10).jpg'
+import img11 from '../../../../Assets/img(11).jpg'
+import img12 from '../../../../Assets/img(12).jpg'
+import img13 from '../../../../Assets/img(13).jpg'
+import img14 from '../../../../Assets/img(14).jpg'
+import img15 from '../../../../Assets/img(15).jpg'
 
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 
+import './Main.css'
 
 const Data = [
   {

@@ -4,6 +4,7 @@ import {MdOutlineTravelExplore} from 'react-icons/md'
 import { Link } from 'react-router-dom'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import {TbGridDots} from 'react-icons/tb'
+import { routes } from '../../../utils/routes'
 
 const Navbar = () => {
   const [active, setActive] = useState("navBar")
@@ -21,7 +22,7 @@ const Navbar = () => {
       <header className="header flex">
 
         <div className="logoDiv">
-           <Link to={'#'} className="logo flex">
+           <Link to={routes.HOME} className="logo flex">
             <h1><MdOutlineTravelExplore className="icon"/>Travelby.</h1>
           </Link>
         </div>
@@ -29,13 +30,16 @@ const Navbar = () => {
         <div className={active}>
           <ul className="navLists flex">
             <li className="navItem">
-              <Link to={'#'} className="navLink">Home</Link>
+              <Link to={routes.HOME} className="navLink">Home</Link>
             </li>
             <li className="navItem">
                <Link to={'#'} className="navLink">Travel Guides</Link>
             </li>
             <li className="navItem">
                <Link to={'#'} className="navLink">Hotels</Link>
+            </li>
+            <li className="navItem">
+               <Link to={routes.FORM} className="navLink">Form</Link>
             </li>
             <button className="btn">
                <Link to={'/Plan'}>START PLANNING</Link>

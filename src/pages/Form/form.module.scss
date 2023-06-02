@@ -1,0 +1,73 @@
+.wrap {
+  color: #000;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+
+  video {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+    z-index: -1;
+  }
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgb(47, 106, 127);
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  mix-blend-mode: hard-light;
+  pointer-events: none;
+}
+
+.wrapForm {
+  z-index: 3 !important;
+  background-color: #fff;
+  z-index: 10 !important;
+  padding: 25px 36px;
+  border-radius: 8px;
+
+  .formData {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .formGroup {
+  }
+
+  .input {
+    margin-bottom: 30px;
+  }
+
+  .btnSubmit {
+    display: flex;
+    justify-content: flex-end;
+
+    > button {
+      border: 1px solid #333;
+      padding: 8px 32px;
+      background-color: transparent;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: all 0.1s linear;
+
+      &:hover {
+        background-color: #333;
+        color: #fff;
+      }
+    }
+  }
+}
