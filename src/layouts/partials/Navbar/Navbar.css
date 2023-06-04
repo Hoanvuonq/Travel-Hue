@@ -23,12 +23,26 @@
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
 }
+
+.header.location-home {
+  background: transparent;
+  box-shadow: none;
+}
+
+.header.location-home .navLink {
+  color: #fff !important;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+}
+
 .header .logo {
   color: var(--blackColor);
   font-weight: 600;
   cursor: pointer;
   align-items: center;
   justify-content: center;
+  background-color: var(--whiteColorDeam);
+  padding: 6px;
+  border-radius: 8px;
 }
 .header .logo .icon {
   font-size: 25px;
@@ -98,7 +112,8 @@
 }
 
 @media screen and (min-width: 769px) {
-  .toggleNavbar, .closeNavbar {
+  .toggleNavbar,
+  .closeNavbar {
     display: none;
   }
   .header {
@@ -134,6 +149,7 @@
 }
 @media screen and (min-width: 1240px) {
   .header {
-    padding: 1rem 8.5rem;
+    padding: 0 8.5rem;
+    height: 70px;
   }
-}/*# sourceMappingURL=Navbar.css.map */
+} /*# sourceMappingURL=Navbar.css.map */
