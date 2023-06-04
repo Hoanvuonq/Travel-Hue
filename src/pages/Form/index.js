@@ -1,53 +1,17 @@
 import * as React from 'react';
+import { FaTimes } from 'react-icons/fa';
 
 import video from '../../Assets/video.mp4';
 import MainLayout from '../../layouts/MainLayout';
-import {routes} from '../../utils/routes';
+import { routes } from '../../utils/routes';
 import Input from '../../components/Input';
 
 import styles from './form.module.scss';
 import useValidateForm from '../../hooks/useValidateForm';
+import { validateSchema } from './validateSchema';
+import Popup from '../../components/Popup';
 
-const validateSchema = (values) => {
-  let errors = {};
-
-  if (!values.name) {
-    errors.name = 'Name is required';
-  }
-  if (!values.age) {
-    errors.age = 'Age is required';
-  } else if (!/^\d+$/.test(values.age)) {
-    errors.age = 'Age is invalid';
-  }
-
-  if (!values.numberOfPeople) {
-    errors.numberOfPeople = 'Number Of People is required';
-  } else if (!/^\d+$/.test(values.numberOfPeople)) {
-    errors.numberOfPeople = 'Number Of People is invalid';
-  }
-
-  if (!values.visitingTimeFrom) {
-    errors.visitingTimeFrom = 'Visiting Time From is required';
-  }
-  if (!values.visitingTimeTo) {
-    errors.visitingTimeTo = 'Visiting Time To is required';
-  } else if (
-    new Date(values.visitingTimeTo).getTime() < new Date(values.visitingTimeFrom).getTime()
-  ) {
-    errors.visitingTimeTo = 'Visiting time to must be greater than time from';
-  }
-
-  if (!values.desiredAmount) {
-    errors.desiredAmount = 'Desired Amount is required';
-  }
-  if (!values.interest) {
-    errors.interest = 'Interest is required';
-  }
-
-  return errors;
-};
-
-const interests = {
+const completeInterests = {
   historicalSites: 'Di tích lịch sử',
   culturalRelics: 'Di tích văn hoá',
   naturalPlace: 'Địa điểm thiên nhiên',
@@ -55,9 +19,10 @@ const interests = {
 };
 
 const Form = () => {
-  const {errors, values, handleChange, handleSubmit, setFormValues} = useValidateForm({
+  const [showPopup, setShowPopup] = React.useState(false);
+  const { errors, values, handleChange, handleSubmit, setFormValues } = useValidateForm({
     initialValue: {
-      name: '',
+      fullName: '',
       age: '',
       numberOfPeople: '',
       visitingTimeFrom: '',
@@ -68,8 +33,21 @@ const Form = () => {
     validate: validateSchema,
     onSubmit: (values) => {
       console.log(`file: index.js:59 ~ Form ~ values:`, values);
+      setShowPopup(true);
     },
   });
+
+  const handleSelectInterest = (value) => {
+    setFormValues('interest', value);
+  };
+
+  const handleClearInterest = () => {
+    setFormValues('interest', '');
+  };
+
+  const handleClickClosePopup = () => {
+    setShowPopup(false);
+  };
 
   return (
     <div>
@@ -83,15 +61,15 @@ const Form = () => {
               <div className={styles.formData}>
                 <div className={styles.formGroup}>
                   <Input
-                    placeholder="Name"
-                    name="name"
-                    error={errors.name}
-                    value={values.name}
+                    label="Full Name"
+                    name="fullName"
+                    error={errors.fullName}
+                    value={values.fullName}
                     onChange={handleChange}
                     containerClassName={styles.input}
                   />
                   <Input
-                    placeholder="Age"
+                    label="Age"
                     name="age"
                     error={errors.age}
                     value={values.age}
@@ -100,7 +78,7 @@ const Form = () => {
                   />
                   <Input
                     error={errors.numberOfPeople}
-                    placeholder="Number of people"
+                    label="Number of people"
                     name="numberOfPeople"
                     value={values.numberOfPeople}
                     onChange={handleChange}
@@ -108,31 +86,28 @@ const Form = () => {
                   />
 
                   <Input
-                    placeholder="Desired amount"
+                    label="Desired amount"
                     name="desiredAmount"
                     error={errors.desiredAmount}
                     value={values.desiredAmount}
                     onChange={handleChange}
+                    iconRight={<span>VND</span>}
                     containerClassName={styles.input}
                   />
                 </div>
                 <div className={styles.formGroup}>
                   <Input
-                    clearable
-                    placeholder="Interest"
+                    label="Interest"
                     containerClassName={styles.input}
                     error={errors.interest}
                     readOnly
                     name="interest"
-                    value={interests[values.interest] || ''}
+                    value={completeInterests[values.interest] || ''}
                     onChange={handleChange}
-                    onSelect={(value) => {
-                      setFormValues('interest', value);
-                    }}
-                    onClickClearText={() => {
-                      setFormValues('interest');
-                    }}
-                    completes={interests}
+                    onSelect={handleSelectInterest}
+                    onClickIconRight={handleClearInterest}
+                    iconRight={<FaTimes />}
+                    completes={completeInterests}
                   />
                   <h5>Visiting time</h5>
                   <h6>From</h6>
@@ -163,6 +138,9 @@ const Form = () => {
           </div>
         </div>
       </section>
+      <Popup visible={showPopup} center onClose={handleClickClosePopup}>
+        <div>Popup</div>
+      </Popup>
     </div>
   );
 };

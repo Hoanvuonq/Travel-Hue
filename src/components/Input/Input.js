@@ -1,30 +1,33 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
+import { useOnClickOutside } from 'hooks-react-custom';
+import classNames from 'classnames';
 
 import style from './input.module.scss';
-import useOnClickOutside from '../../hooks/useOnClickOutside ';
-import {FaTimes} from 'react-icons/fa';
 
 const Input = (props) => {
   const {
     type = 'text',
     autoComplete = 'off',
     completes = {},
-    clearable,
+    placeholder = ' ',
     value,
-    placeholder,
     className,
     containerClassName,
     name,
     readOnly,
     error,
+    iconRight,
     onSelect,
     onChange,
-    onClickClearText,
+    onClickIconRight,
+    label,
   } = props;
 
   const [showComplete, setShowComplete] = React.useState(false);
 
-  const ref = useOnClickOutside(() => {
+  const refWrap = React.useRef();
+  useOnClickOutside(refWrap, () => {
     setShowComplete(false);
   });
 
@@ -40,34 +43,31 @@ const Input = (props) => {
   };
 
   return (
-    <div
-      ref={ref}
-      className={`${style.wrap} ${error ? style.error : ''} ${containerClassName || ''}`}
-    >
+    <div ref={refWrap} className={classNames(style.wrap, error && style.error, containerClassName)}>
       <div className={style.wrapInput}>
         <input
           autoComplete={autoComplete}
           type={type}
-          placeholder=" "
+          placeholder={placeholder}
           name={name}
-          className={`${style.input} ${className || ''}`}
+          className={classNames(style.input, className)}
           value={value}
           onChange={onChange}
           onFocus={handleFocus}
           readOnly={readOnly}
         />
-        {placeholder && <span className={style.placeholder}>{placeholder}</span>}
-        {clearable && value && (
-          <span onClick={onClickClearText} className={style.clearText}>
-            <FaTimes />
-          </span>
+        {label && <span className={style.label}>{label}</span>}
+        {iconRight && value && (
+          <div onClick={onClickIconRight} className={style.iconRight}>
+            {iconRight}
+          </div>
         )}
       </div>
       {error && <span className={style.labelError}>{error}</span>}
       {completes && Object.keys(completes).length > 0 && (
         <>
           <div className={style.space}></div>
-          <div className={`${style.selects} ${showComplete ? style.completeActive : ''}`}>
+          <div className={classNames(style.selects, showComplete && style.completeActive)}>
             {Object.keys(completes).map((selectItem, i) => (
               <div
                 onClick={handleClickSelectItem(selectItem)}
@@ -82,6 +82,24 @@ const Input = (props) => {
       )}
     </div>
   );
+};
+
+Input.propTypes = {
+  type: PropTypes.string,
+  autoComplete: PropTypes.oneOf(['on', 'off']),
+  completes: PropTypes.object,
+  value: PropTypes.string,
+  placeholder: PropTypes.string,
+  label: PropTypes.string,
+  className: PropTypes.string,
+  containerClassName: PropTypes.string,
+  name: PropTypes.string,
+  readOnly: PropTypes.bool,
+  error: PropTypes.string,
+  iconRight: PropTypes.node,
+  onSelect: PropTypes.func,
+  onChange: PropTypes.func,
+  onClickIconRight: PropTypes.func,
 };
 
 export default Input;

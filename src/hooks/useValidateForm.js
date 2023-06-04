@@ -1,6 +1,6 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 
-const useValidateForm = ({initialValue = {}, validate, onSubmit}) => {
+const useValidateForm = ({ initialValue = {}, validate, onSubmit }) => {
   const [values, setValues] = useState(initialValue);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -14,34 +14,42 @@ const useValidateForm = ({initialValue = {}, validate, onSubmit}) => {
       }
       setIsSubmitting(false);
     }
-  }, [isSubmitting, values, validate, errors, onSubmit]);
+  }, [isSubmitting, values, errors, validate, onSubmit]);
 
-  const handleChange = (e) => {
-    const {name, value} = e.target;
-    setValues((prevValues) => ({...prevValues, [name]: value}));
-  };
+  const handleChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setValues((prevValues) => ({ ...prevValues, [name]: value }));
+  }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const validationErrors = validate(values);
-    setErrors(validationErrors);
-    setIsSubmitting(true);
-  };
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      const validationErrors = validate(values);
+      setErrors(validationErrors);
+      setIsSubmitting(true);
+    },
+    [validate, values]
+  );
 
-  const setFormValues = (name, newValues) => {
+  const setFormValues = useCallback((name, newValues) => {
     setValues((p) => ({
       ...p,
       [name]: newValues,
     }));
-  };
+  }, []);
 
-  return {
-    values,
-    errors,
-    handleChange,
-    handleSubmit,
-    setFormValues,
-  };
+  const returnAction = useMemo(
+    () => ({
+      values,
+      errors,
+      handleChange,
+      handleSubmit,
+      setFormValues,
+    }),
+    [errors, handleChange, handleSubmit, setFormValues, values]
+  );
+
+  return returnAction;
 };
 
 export default useValidateForm;
