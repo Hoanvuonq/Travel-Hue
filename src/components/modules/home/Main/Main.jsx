@@ -1,7 +1,8 @@
-import React, {useEffect}from 'react'
+import React, {useState,useEffect}from 'react'
 import {HiOutlineClipboardCheck, HiOutlineLocationMarker } from 'react-icons/hi'
 import { faStar as SolidStar, faStarHalfAlt as HalfStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Blog from '../../../../pages/Blog/Blog';
 
 import img from '../../../../Assets/img(1).jpg'
 import img2 from '../../../../Assets/img(2).jpg'
@@ -198,61 +199,71 @@ const Main = () => {
   
     return stars;
   };
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleItemClick = (item) => {
+    setSelectedItem(item);
+  };
+
+  const closePopup = () => {
+    setSelectedItem(null);
+  };
 
   return (
-    <section className='main container section'>
-      <div className="secTitle">
-        <h3 data-aos="fade-right" className="title">
+    <section className="main container section">
+    <div className="secTitle">
+      <h3 data-aos="fade-right" className="title">
         Top attractions in Hue city
-        </h3>
-      </div>
+      </h3>
+    </div>
 
-      <div className="secContent grid">
-        {
-          Data.map(({id, imgSrc, destTitle, location, grade, fees, description})=>{
-            return(
-              <div key={id} data-aos="fade-up" className="singleDestination">
-                <div className="imageDiv">
-                  <img  src={imgSrc} alt={destTitle} />
+    <div className="secContent grid">
+      {Data.map(({ id, imgSrc, destTitle, location, grade, fees, description }) => {
+        return (
+          <div key={id} data-aos="fade-up" className="singleDestination">
+            <div className="imageDiv">
+              <img src={imgSrc} alt={destTitle} />
+            </div>
+
+            <div className="cardInfo">
+              <h4 className="destTitle">{destTitle}</h4>
+              <span className="continent flex">
+                <HiOutlineLocationMarker className="icon" />
+                <span className="name">{location}</span>
+              </span>
+              <div className="fees flex">
+                <div className="grade">
+                  <span>{grade}</span>
                 </div>
-
-                <div className="cardInfo">
-                  <h4 className="destTitle">{destTitle}</h4>
-                  <span className="continent flex">
-                    <HiOutlineLocationMarker className='icon'/>
-                    <span className='name'>{location}</span>
-                  </span>
-                  <div className="fees flex">
-                    <div className="grade">
-                      <span>{grade}</span>
-                    </div>
-                    <div className="price">
-                      <h5>{fees}
-                        {/* <span>
-                          <img className='img-star' src={Star} alt="Star" />
-                        </span> */}
-                        <span>
-                        {renderRatingStars(fees)}
-                        </span>
-                      </h5>
-                    </div>
-                  </div>
-
-                  <div className="desc">
-                    <p>{description}</p>
-                  </div>
-
-                  <button className='btn flex'>
-                    DETAILS <HiOutlineClipboardCheck className='icon'/>
-                  </button>
+                <div className="price">
+                  <h5>
+                    {fees}
+                    <span>{renderRatingStars(fees)}</span>
+                  </h5>
                 </div>
               </div>
-            )
-          })
-        }
 
-      </div>
-    </section>
+              <div className="desc">
+                <p>{description}</p>
+              </div>
+
+              <button className="btn flex" onClick={() => handleItemClick(id)}>
+                DETAILS <HiOutlineClipboardCheck className="icon" />
+              </button>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    {selectedItem !== null && (
+      <Blog
+        imgSrc={Data[selectedItem - 1].imgSrc}
+        description={Data[selectedItem - 1].description}
+        closePopup={closePopup}
+      />
+    )}
+  </section>
   )
 }
 

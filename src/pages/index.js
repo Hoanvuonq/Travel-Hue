@@ -4,8 +4,9 @@ import EmptyLayout from "../layouts/EmptyLayout";
 import Home from "./Home";
 import Plan from "./Plan/Plan";
 import Form from "./Form";
+import Blog from "./Blog/Blog";
 
-const pages = [Home, Plan, Form]
+const pages = [Home, Plan, Form, Blog,]
 
 const NextPages = () => {
   return (
