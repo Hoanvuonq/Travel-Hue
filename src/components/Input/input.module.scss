@@ -1,7 +1,6 @@
 .wrap {
   position: relative;
   font-size: 14px;
-  margin-top: 10px;
 }
 
 .wrapInput {
@@ -13,7 +12,7 @@
     border-color: red;
   }
 
-  & .placeholder {
+  & .label {
     color: red;
   }
 }
@@ -31,8 +30,8 @@
   min-width: 250px;
   width: 100%;
 
-  &:not(:placeholder-shown) ~ .placeholder,
-  &:focus-within ~ .placeholder {
+  &:not(:placeholder-shown) ~ .label,
+  &:focus-within ~ .label {
     top: 0;
     left: 16px;
     opacity: 1;
@@ -40,7 +39,7 @@
   }
 }
 
-.placeholder {
+.label {
   position: absolute;
   top: 50%;
   left: 12px;
@@ -51,7 +50,7 @@
   opacity: 0.4;
   pointer-events: none;
 }
-.clearText {
+.iconRight {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

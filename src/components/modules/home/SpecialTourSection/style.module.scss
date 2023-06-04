@@ -1,0 +1,55 @@
+.wrap {
+  .headerTitle {
+    color: #212121;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36px;
+  }
+}
+
+.wrapper {
+  display: flex;
+  gap: 30px;
+}
+
+.asideTourCategory {
+  max-width: 100%;
+  overflow-y: scroll;
+  width: 275px;
+  border-radius: 12px;
+  max-height: 600px;
+  border: 1px solid #e6e6e6;
+
+  .headTitle {
+    font-weight: 600;
+    width: 100%;
+    align-items: baseline;
+    display: flex;
+    padding: 16px 16px 0;
+    word-break: break-word;
+    margin-bottom: 10px;
+  }
+
+  .asideInner {
+    display: flex;
+    flex-direction: column;
+
+    .asideItem {
+      padding: 8px 16px;
+      align-items: flex-start;
+      color: #212121;
+      display: flex;
+      cursor: pointer;
+      transition: all 0.2s linear;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+    }
+  }
+}
+
+.wrapContentTour {
+  display: flex;
+  flex-wrap: wrap;
+}

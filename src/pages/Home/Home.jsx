@@ -1,23 +1,22 @@
-import React from 'react'
-
-import Main from '../../components/modules/home/Main/Main';
+import React from 'react';
 
 import MainLayout from '../../layouts/MainLayout';
 import { routes } from '../../utils/routes';
-import HeaderHome from '../../components/modules/home/HeaderHome/HeaderHome';
+import CarouselSection from '../../components/modules/home/CarouselSection';
+import SpecialTourSection from '../../components/modules/home/SpecialTourSection';
 
 const Home = () => {
   return (
     <>
-      <HeaderHome />
-      <Main/>
+      <CarouselSection />
+      <SpecialTourSection />
     </>
-  )
-}
+  );
+};
 
 Home.options = {
   layout: MainLayout,
-  route: routes.HOME
-}
+  route: routes.HOME,
+};
 
-export default Home
+export default Home;

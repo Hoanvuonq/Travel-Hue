@@ -1,0 +1,27 @@
+.wrapCarousel {
+  position: relative;
+
+  .block {
+    display: block !important;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .btnControls {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.btnPrev {
+      transform: translateX(-50%);
+      left: 0;
+    }
+    &.btnNext {
+      transform: translateX(50%);
+      right: 0;
+    }
+  }
+}
