@@ -34,12 +34,12 @@ const Navbar = () => {
             <li className="navItem">
               <Link to={routes.HOME} className="navLink">Home</Link>
             </li>
-            <li className="navItem">
+            {/* <li className="navItem">
                <Link to={'#'} className="navLink">Travel Guides</Link>
-            </li>
-            <li className="navItem">
+            </li> */}
+            {/* <li className="navItem">
                <Link to={'#'} className="navLink">Hotels</Link>
-            </li>
+            </li> */}
             <li className="navItem">
                <Link to={routes.FORM} className="navLink">Form</Link>
             </li>

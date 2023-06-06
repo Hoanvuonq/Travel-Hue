@@ -11,7 +11,7 @@ const Blog = ({ imgSrc, description, closePopup }) => {
           <div className="popup-container">
             <img src={imgSrc} alt="Popup Image" />
             <p>{description}</p>
-            <button onClick={closePopup}>X</button>
+            <div className='btn-close' onClick={closePopup}>X</div>
           </div>
         </div>
       </div>

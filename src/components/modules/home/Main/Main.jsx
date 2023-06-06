@@ -171,7 +171,7 @@ const Data = [
     location: 'Nguyen Dinh Chieu, Phu Hoi, Hue City, Thua Thien Hue',
     grade: 'Sights & Landmarks',
     fees: '4,4',
-    description: 'Phố đi bộ Nguyễn Đình Chiểu còn là nơi được chọn để tổ chức nhiều hoạt động nhằm phục vụ cho tất cả khách tham quan, đặc biệt trong đó có hoạt động du thuyền trên sông Hương. Đây đươc xem là một hoạt động du lịch nổi bật nhằm giúp du khách có thể thử giản, giải trí cũng như hòa mình với vẽ đẹp mộng mơ của mãnh đất Cố Đô.'
+    description: 'Nguyen Dinh Chieu Walking Street is also the chosen place to organize many activities to serve all visitors, especially including cruises on the Perfume River. This is considered an outstanding tourist activity to help visitors relax, entertain as well as immerse themselves in the dreamy beauty of the ancient capital.'
   },
 ]
 
