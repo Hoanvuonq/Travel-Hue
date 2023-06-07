@@ -1,12 +1,12 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import EmptyLayout from "../layouts/EmptyLayout";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import EmptyLayout from '../layouts/EmptyLayout';
 
-import Home from "./Home";
-import Plan from "./Plan/Plan";
-import Form from "./Form";
-import Blog from "./Blog/Blog";
+import Home from './Home';
+import Plan from './Plan/Plan';
+import Form from './Form';
+import Blog from './Blog/Blog';
 
-const pages = [Home, Plan, Form, Blog,]
+const pages = [Home, Plan, Form, Blog];
 
 const NextPages = () => {
   return (
@@ -31,4 +31,4 @@ const NextPages = () => {
     </BrowserRouter>
   );
 };
-export default NextPages
+export default NextPages;

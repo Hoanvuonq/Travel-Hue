@@ -2,7 +2,6 @@ import * as React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper';
 // import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
-import { useHover } from 'hooks-react-custom';
 import classNames from 'classnames';
 import PropType from 'prop-types';
 
@@ -10,6 +9,7 @@ import styles from './carousel.module.scss';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
+import useHover from '../../hooks/useHover';
 
 const Carousel = (props) => {
   const {
@@ -24,6 +24,8 @@ const Carousel = (props) => {
     onRenderItem,
     onSlideChange,
     className,
+    slidesPerView,
+    spaceBetween,
     ...rest
   } = props;
 
@@ -92,11 +94,16 @@ const Carousel = (props) => {
         onSwiper={setSwiperRef}
         modules={[Autoplay, Pagination, EffectFade]}
         onSlideChange={handleSLideChange}
+        slidesPerView={slidesPerView}
+        spaceBetween={spaceBetween}
+        className={className}
         {...rest}
       >
         {(source?.length || 0) > 0 &&
           source?.map((item, index) => (
-            <SwiperSlide key={`${index}-120`}>{onRenderItem?.(item, index)}</SwiperSlide>
+            <SwiperSlide key={`${index}-120`} className={classNames(classes?.swiperSlide)}>
+              {onRenderItem?.(item, index)}
+            </SwiperSlide>
           ))}
       </Swiper>
     </div>
@@ -110,9 +117,12 @@ Carousel.propTypes = {
     wrapNavigate: PropType.string,
     nextSlide: PropType.string,
     prevSlide: PropType.string,
+    swiperSlide: PropType.string,
   }),
   source: PropType.any.isRequired,
   nextSlide: PropType.node,
+  slidesPerView: PropType.number,
+  spaceBetween: PropType.number,
   prevSlide: PropType.node,
   hideNavigateOnBegin: PropType.bool,
   hideNavigateOnEnd: PropType.bool,
