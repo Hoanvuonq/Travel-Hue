@@ -141,20 +141,12 @@
   color: yellow;
 }
 
-/* .img-div {
-  width: 336px;
-  height: 243px;
-  object-fit: cover;
-} */
-
-
-
 @media screen and (min-width: 500px) {
   .title {
     font-size: 1.5rem;
   }
   .title::after {
-    width: 103px !important;
+    width: 182px !important;
   }
   .secContent {
     grid-template-columns: repeat(2, 1fr);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+// import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { useHover } from 'hooks-react-custom';
 import classNames from 'classnames';
 import PropType from 'prop-types';

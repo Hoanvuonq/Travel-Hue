@@ -45,7 +45,7 @@
     margin-bottom: 10px;
   }
   
-  .popup-content button {
+  .popup-content .btn-close {
     display: inline-block;
     font-style: normal;
     font-weight: 400;
@@ -59,8 +59,10 @@
     position: absolute;
     right: -38px;
     top: 0;
+    font-weight: 600;
   }
   
-  .popup-content button:hover {
-    background-color: #0056b3;
+  .popup-content .btn-close:hover {
+    color: #000;
+
   } 
