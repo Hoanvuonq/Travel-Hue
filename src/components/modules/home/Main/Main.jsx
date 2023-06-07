@@ -213,7 +213,7 @@ const Main = () => {
     <section className="main container section">
     <div className="secTitle">
       <h3 data-aos="fade-right" className="title">
-        Top attractions in Hue city
+      Thắng cảnh hàng đầu tại Thành phố Huế
       </h3>
     </div>
 
