@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Item.scss';
-import Item1 from '../../../../Assets/item-tour.png';
-import Item2 from '../../../../Assets/item-destination.png';
-import Item3 from '../../../../Assets/item-historical.png';
+import Item1 from '../../../../Assets/item1.png';
+import Item2 from '../../../../Assets/item2.png';
+import Item3 from '../../../../Assets/item3.png';
+import Item4 from '../../../../Assets/item4.png';
 
 const items = [
   {
@@ -17,6 +18,10 @@ const items = [
   {
     srcItem: Item3,
     titleItem: 'Di tích lịch sử',
+  },
+  {
+    srcItem: Item4,
+    titleItem: 'Danh lam thắng cảnh',
   },
 ];
 

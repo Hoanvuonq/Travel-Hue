@@ -14,39 +14,24 @@ const dataDestination = [
     distance: '79km',
   },
   {
-    thumbnail: 'https://res.klook.com/image/upload/Mobile/City/kpoyhrq0tgtkpzucv67d.webp',
-    title: 'Đà nẵng',
-    distance: '79km',
+    thumbnail: 'https://res.klook.com/image/upload/Mobile/City/rxhtyutcb46tcd50cmqf.webp',
+    title: 'Hội An',
+    distance: '103km',
   },
   {
-    thumbnail: 'https://res.klook.com/image/upload/Mobile/City/kpoyhrq0tgtkpzucv67d.webp',
-    title: 'Đà nẵng',
-    distance: '79km',
+    thumbnail: 'https://res.klook.com/image/upload/Mobile/City/ljrcwyg7ywwgqjcmmoze.webp',
+    title: 'Đồng Hới - Quảng Bình',
+    distance: '153km',
   },
   {
-    thumbnail: 'https://res.klook.com/image/upload/Mobile/City/kpoyhrq0tgtkpzucv67d.webp',
-    title: 'Đà nẵng',
-    distance: '79km',
+    thumbnail: 'https://res.klook.com/image/upload/Mobile/City/i00q6nyjenl4iqt3yzqo.webp',
+    title: 'Quy Nhơn',
+    distance: '346km',
   },
   {
-    thumbnail: 'https://res.klook.com/image/upload/Mobile/City/kpoyhrq0tgtkpzucv67d.webp',
-    title: 'Đà nẵng',
-    distance: '79km',
-  },
-  {
-    thumbnail: 'https://res.klook.com/image/upload/Mobile/City/kpoyhrq0tgtkpzucv67d.webp',
-    title: 'Đà nẵng',
-    distance: '79km',
-  },
-  {
-    thumbnail: 'https://res.klook.com/image/upload/Mobile/City/kpoyhrq0tgtkpzucv67d.webp',
-    title: 'Đà nẵng',
-    distance: '79km',
-  },
-  {
-    thumbnail: 'https://res.klook.com/image/upload/Mobile/City/kpoyhrq0tgtkpzucv67d.webp',
-    title: 'Đà nẵng',
-    distance: '79km',
+    thumbnail: 'https://res.klook.com/image/upload/Mobile/City/kabzblpcyaqdowndaaye.webp',
+    title: 'Nha Trang',
+    distance: '501km',
   },
 ];
 
@@ -64,24 +49,15 @@ const DestinationSection = (props) => {
         hideNavigateOnBegin
         hideNavigateOnEnd
         hoverShowNavigate
-        nextSlide={
-          <div className={style.icon}>
-            <BsChevronRight />
-          </div>
-        }
-        prevSlide={
-          <div className={style.icon}>
-            <BsChevronLeft />
-          </div>
-        }
         loop
-        autoplay
         onRenderItem={(item) => (
           <div className={style.wrapItem}>
             <Image source={item.thumbnail} paddingTop="100%" height={288} />
-            <div className={style.info}>
-              <p className={style.title}>{item.title}</p>
-              <span>{item.distance}</span>
+            <div className={style.bgItem}>
+              <div className={style.info}>
+                <p className={style.title}>{item.title}</p>
+                <span>{item.distance}</span>
+              </div>
             </div>
           </div>
         )}

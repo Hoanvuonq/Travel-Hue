@@ -18,28 +18,41 @@
   transition: all 0.2s linear;
   position: relative;
 
-  .info {
+  .bgItem {
     position: absolute;
-    bottom: 0;
     color: #fff;
     padding: 8px 16px;
-    .title {
-      display: -webkit-box;
-      font-size: 18px;
-      line-height: 26px;
-      color: rgb(255, 255, 255);
-      font-weight: 500;
-      max-height: 78px;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      -webkit-box-orient: vertical;
-      -webkit-box-align: start;
-      -webkit-line-clamp: 3;
-      word-break: break-word;
+    overflow: hidden;
+    inset: 0px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+    border-radius: 8px;
+    height: 100%;
+    width: 100%;
+    .info {
+      position: absolute;
+      bottom: 0;
+      color: #fff;
+      padding: 8px 16px;
+      
+  
+      .title {
+        display: -webkit-box;
+        font-size: 18px;
+        line-height: 26px;
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+        max-height: 78px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+        -webkit-box-align: start;
+        -webkit-line-clamp: 3;
+        word-break: break-word;
+      }
     }
   }
-
   &:hover {
     transform: translateY(-8px);
   }
+
 }

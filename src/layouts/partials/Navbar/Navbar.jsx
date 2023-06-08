@@ -32,19 +32,13 @@ const Navbar = () => {
         <div className={active}>
           <ul className="navLists flex">
             <li className="navItem">
-              <Link to={routes.HOME} className="navLink">Home</Link>
+              <Link to={routes.HOME} className="navLink">Trang chủ</Link>
             </li>
-            {/* <li className="navItem">
-               <Link to={'#'} className="navLink">Travel Guides</Link>
-            </li> */}
-            {/* <li className="navItem">
-               <Link to={'#'} className="navLink">Hotels</Link>
-            </li> */}
             <li className="navItem">
-               <Link to={routes.FORM} className="navLink">Form</Link>
+               <Link to={routes.FORM} className="navLink">Đề xuất</Link>
             </li>
             <button className="btn">
-               <Link to={'/Plan'}>START PLANNING</Link>
+               <Link to={'/Plan'}>LẬP KẾ HOẠCH</Link>
             </button>
 
           </ul>

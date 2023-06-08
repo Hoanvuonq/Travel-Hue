@@ -29,149 +29,149 @@ const Data = [
   {
     id:1,
     imgSrc: img,
-    destTitle: 'Thien Mu Pagoda',
+    destTitle: 'Chùa Thiên Mụ',
     location: 'FG3V+6X Hue City, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Di tích lịch sử',
     fees: '4,5',
-    description: 'Thien Mu Pagoda, also known as Linh Mu Pagoda, is an ancient pagoda located on Ha Khe hill, on the left bank of the Perfume River, about 5 km west of Hue city center. Thien Mu Pagoda was officially established in the year of Tan Suu, during the reign of Lord Tien Nguyen Hoang - the first Nguyen Lord in Dang Trong.'
+    description: 'Chùa Thiên Mụ hay còn gọi là chùa Linh Mụ, là một ngôi chùa cổ nằm trên đồi Hà Khê, tả ngạn sông Hương, cách trung tâm thành phố Huế khoảng 5 km về phía Tây. Chùa Thiên Mụ chính thức được khởi lập vào năm Tân Sửu, thời chúa Tiên Nguyễn Hoàng - vị chúa Nguyễn đầu tiên ở Đàng Trong.'
   },
 
   {
     id:2,
     imgSrc: img2,
-    destTitle: 'Vong Canh Hill',
+    destTitle: 'Đồi Vọng Cảnh',
     location: 'P102 Huyen Tran Princess, Thuy Bieu, Hue City, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Danh lam thắng cảnh',
     fees: '4,6',
-    description: 'Vong Canh Hill is a 43m high hill in the southwest of Hue city, the foothills adjacent to the Perfume River. It is located in the middle of the mausoleum of the Nguyen kings and opposite the Hon Chen Palace, which was established in ancient times in the opposite bank.'
+    description: 'Đồi Vọng Cảnh là một ngọn đồi cao 43m ở phía Tây Nam thành phố Huế, chân đồi giáp với sông Hương. Nó nằm ở giữa khu lăng tẩm của các vua Nguyễn và đối diện với điện Hòn Chén, được thành lập từ xa xưa ở bờ đối diện.'
 
   },
 
   {
     id:3,
     imgSrc: img3,
-    destTitle: 'Khai Dinh Mausoleum',
+    destTitle: 'Lăng Khải Định',
     location: 'Thuy Bang commune, Huong Thuy district, Hue, Thua Thien Hue 530000',
-    grade: 'Sights & Landmarks',
+    grade: 'Di tích lịch sử',
     fees: '4,4',
-    description: 'The overall of the Mausoleum is a rectangular floating block reaching 127 steps high. Mountains, hills and streams of a large area around the Mausoleum are used as feng shui elements: criminal record, post-occipital, left dragon, right white tiger, clear path, water convergence, giving Khai Dinh mausoleum a natural landscape. majestic nature.'
+    description: 'Tổng thể của Lăng là một khối nổi hình chữ nhật, cao 127 bậc. Núi, đồi, suối của một vùng rộng lớn xung quanh Lăng được sử dụng làm yếu tố phong thủy: tiền án, hậu chẩm, tả rồng, hữu bạch hổ, minh đường, thủy tụ, tạo cho lăng Khải Định một cảnh quan thiên nhiên. thiên nhiên hùng vĩ.'
   },
 
   {
     id:4,
     imgSrc: img4,
-    destTitle: 'Tomb of Tu Duc',
+    destTitle: 'Lăng Tự Đức',
     location: 'Dong Ba Bridge, Thuong Village, Hue City, Thua Thien Hue 530000',
-    grade: 'Sights & Landmarks',
+    grade: 'Di tích lịch sử',
     fees: '4,4',
-    description: 'Tu Duc Tomb is a complex of architectural works, including Tu Duc burial place, located in a narrow valley in Duong Xuan Thuong village, Cu Chanh canton, now Thuong Ba village, Thuy Xuan ward, city. Hue. When it was first built, Tu Duc named it Khiem Cung.'
+    description: 'Lăng Tự Đức là một quần thể công trình kiến trúc, trong đó có mộ vua Tự Đức, nằm trong một thung lũng hẹp thuộc làng Dương Xuân Thượng, tổng Cư Chánh, nay là thôn Thượng Ba, phường Thủy Xuân, TP. Huế. Khi mới xây dựng, Tự Đức đặt tên là Khiêm Cung.'
   },
 
   {
     id:5,
     imgSrc: img5,
-    destTitle: 'Truong Tien Bridge',
+    destTitle: 'Cầu Trường Tiền',
     location: 'Truong Tien Bridge, Phu Hoi, Hue City',
-    grade: 'Sights & Landmarks',
+    grade: 'Danh lam thắng cảnh',
     fees: '4,7',
-    description: 'Truong Tien Bridge or Trang Tien Bridge is a 402.60 m long bridge, consisting of 6 comb-shaped steel beams with an aperture of 67 m each. The bridge is 6 m wide, designed in Gothic architecture, spanning the Perfume River.'
+    description: 'Cầu Trường Tiền hay cầu Tràng Tiền dài 402,60 m, gồm 6 dầm thép hình răng lược, khẩu độ mỗi dầm 67 m. Cầu rộng 6 m, được thiết kế theo kiến trúc Gothic, bắc qua sông Hương.'
   },
 
   {
     id:6,
     imgSrc: img6,
-    destTitle: 'Dong Ba Market',
+    destTitle: 'Chợ Đông Ba',
     location: 'Phu Hoa, Hue City, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Danh lam thắng cảnh',
     fees: '4,2',
-    description: 'Dong Ba Market in Hue is the most famous traditional market in the ancient capital, with high cultural and historical value. This market was originally named Quy Gia Thi to mark the return of the Nguyen king when he returned to Phu Xuan. The name Dong Ba Market in Hue began to appear in 1887 under the reign of King Dong Khanh.'
+    description: 'Chợ Đông Ba Huế là khu chợ truyền thống nổi tiếng nhất Cố đô, có giá trị văn hóa lịch sử cao. Khu chợ này vốn có tên là Quý Gia Thị để đánh dấu sự trở lại của vua Nguyễn khi trở lại Phú Xuân. Cái tên Chợ Đông Ba ở Huế bắt đầu xuất hiện từ năm 1887 dưới triều vua Đồng Khánh.'
   },
 
   {
     id:7,
     imgSrc: img7,
-    destTitle: 'Quoc Hoc High School for the Gifted in Hue',
+    destTitle: 'Trường THPT Chuyên Quốc Học Huế',
     location: '12 Le Loi, Vinh Ninh, Hue City, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Danh lam thắng cảnh',
     fees: '4,8',
-    description: 'Quoc Hoc School is a famous school in Hue city, Vietnam. Established on October 23, 1896, Quoc Hoc is the third oldest high school in Vietnam after Collège Chasseloup-Laubat and Collège de My Tho.'
+    description: 'Trường Quốc Học là một ngôi trường nổi tiếng ở thành phố Huế, Việt Nam. Được thành lập vào ngày 23 tháng 10 năm 1896, Quốc Học là trường trung học lâu đời thứ ba ở Việt Nam sau Collège Chasseloup-Laubat và Collège de My Tho.'
   },
 
   {
     id:8,
     imgSrc: img8,
-    destTitle: 'Ngu Binh Mountain',
+    destTitle: 'Núi Ngự Bình',
     location: 'An Cuu, City. Hue, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Danh lam thắng cảnh',
     fees: '4,2',
-    description: 'Ngu Binh Mountain, briefly called Ngu Mountain, was formerly known as Hon Mo or Nui Bang; is a mountain 103 m high on the right bank of the Perfume River, 4 km south of Hue city center.'
+    description: 'Núi Ngự Bình gọi tắt là núi Ngự, xưa có tên là Hòn Mồ hay Núi Bằng; là ngọn núi cao 103 m ở hữu ngạn sông Hương, cách trung tâm thành phố Huế 4 km về phía nam.'
   },
 
   {
     id:9,
     imgSrc: img9,
-    destTitle: 'Museum of Royal Antiquities',
+    destTitle: 'Bảo tàng Cổ vật Hoàng gia',
     location: '03 Le Truc, Phu Hau, Hue City, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Di tích lịch sử',
     fees: '4,5',
-    description: 'Hue Museum of Royal Antiquities is a museum under the management of Hue Monuments Conservation Center. The main building of the museum is wooden, with 128 precious wooden pillars, on the columns there are carvings of four spirits: long - li - Quy - phuong and more than 1000 poems in Chinese characters.'
+    description: 'Bảo tàng Cổ vật Cung đình Huế là bảo tàng trực thuộc Trung tâm Bảo tồn Di tích Cố đô Huế quản lý. Tòa nhà chính của bảo tàng bằng gỗ, với 128 cây cột bằng gỗ quý, trên các cột có chạm hình tứ linh: long - li - quy - phượng và hơn 1000 bài thơ bằng chữ Hán.'
   },
 
   {
     id:10,
     imgSrc: img10,
-    destTitle: 'Minh Mang Tomb',
+    destTitle: 'Lăng Minh Mạng',
     location: '9HQC+CW2, Unnamed Road, Huong Tra, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Di tích lịch sử',
     fees: '4,4',
-    description: 'Minh Mang Tomb, whose literal name is Hieu Lang, built by Emperor Thieu Tri of the Nguyen Dynasty, is located on Cam Ke mountain, An Bang hamlet, Huong Tho commune, Hue city, Thua Thien Hue province, near Bang junction. Lang is the confluence of two streams, Huu Trach and Ta Trach, forming the Perfume River, 12 km from the center of Hue city.'
+    description: 'Lăng Minh Mạng, tên chữ là Hiếu Lăng, do vua Thiệu Trị triều Nguyễn cho xây dựng, tọa lạc trên núi Cẩm Kê, thôn An Bằng, xã Hương Thọ, thành phố Huế, tỉnh Thừa Thiên Huế, gần ngã ba Bạng. Láng là nơi hợp lưu của hai dòng Hữu Trạch và Tả Trạch tạo thành sông Hương, cách trung tâm thành phố Huế 12 km.'
   },
 
   {
     id:11,
     imgSrc: img11,
-    destTitle: 'Huong River',
+    destTitle: 'Sông Hương',
     location: '03 Le Truc, Phu Hau, Hue City, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Danh lam thắng cảnh',
     fees: '4,5',
-    description: 'The Perfume River has two main sources, both originating from the Truong Son mountain range. The main stream of Ta Trach is about 67 km long, originating from the Truong Son Dong range, along the Bach Ma national park area, flowing to the northwest with 55 waterfalls. majestic, passing Nam Dong town and then confluence with Huu Trach stream at Tuan junction (about 3 km north of Minh Mang mausoleum area).'
+    description: 'Sông Hương có hai nguồn chính đều bắt nguồn từ dãy Trường Sơn. Dòng chính Tả Trạch dài khoảng 67 km, bắt nguồn từ dãy Trường Sơn Đông, dọc theo khu vực vườn quốc gia Bạch Mã, chảy về phía Tây Bắc với 55 thác nước. hùng vĩ, đi qua thị trấn Nam Đông rồi hợp lưu với dòng Hữu Trạch tại ngã ba Tuần (cách khu vực lăng Minh Mạng khoảng 3 km về phía Bắc).'
   },
 
   {
     id:12,
     imgSrc: img12,
-    destTitle: 'Huyen Khong Son Thuong',
+    destTitle: 'Huyền Không Sơn Thượng',
     location: 'FF2V+FJX, Cham, Huong Ho, Huong Tra, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Danh lam thắng cảnh',
     fees: '4,7',
-    description: 'Huyen Khong Son Thuong is a pagoda in Cham village, Huong Ho ward, Hue city, Thua Thien Hue province. The pagoda belongs to the Theravada Buddhist sect, was founded by the Venerable Gioi Duc in 1989. The pagoda is famous for the poem Stone by Huyen Khong Son Thuong Trieu Tam Anh and Sau Ma.'
+    description: 'Huyền Không Sơn Thượng là một ngôi chùa ở làng Chăm, phường Hương Hồ, thành phố Huế, tỉnh Thừa Thiên Huế. Chùa thuộc hệ phái Phật giáo Nam Tông, do Hòa thượng Giới Đức thành lập năm 1989. Chùa nổi tiếng với bài thơ Đá của Huyền Không Sơn Thượng Triệu Tâm Anh và Sáu Mã.'
   },
   {
     id:13,
     imgSrc: img13,
-    destTitle: 'Tu Hieu Pagoda',
+    destTitle: 'Chùa Từ Hiếu',
     location: 'Duong Xuan Thuong III village, Thuy Xuan, Hue City, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Danh lam thắng cảnh',
     fees: '4,7',
-    description: 'Tu Hieu Pagoda or Tu Hieu Communal House is the name of a temple in Duong Xuan Thuong III village, Thuy Xuan ward, Hue city, Thua Thien Hue province. The pagoda is one of the great ancient temples and is a cultural and historical scenic spot of the ancient capital of Hue.'
+    description: 'Chùa Từ Hiếu hay Tổ đình Từ Hiếu là tên một ngôi chùa thuộc thôn Dương Xuân Thượng III, phường Thủy Xuân, thành phố Huế, tỉnh Thừa Thiên Huế. Chùa là một trong những ngôi chùa cổ kính lớn và là danh lam thắng cảnh lịch sử văn hóa của cố đô Huế.'
   },
   {
     id:14,
     imgSrc: img14,
-    destTitle: 'Hon Chen Palace',
+    destTitle: 'Điện Hòn Chén',
     location: 'CHC7+Q5H, Hai Cat Village, Huong Tra, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Di tích lịch sử',
     fees: '4,3',
-    description: 'Hon Chen or Hue Nam Palace is located on Ngoc Tran mountain, in Ngoc Ho village, Huong Ho ward, Hue city, Thua Thien Hue province. Previously, Ngoc Tran mountain was called Huong Uyen Son, later renamed Ngoc Tran, folk still call it Hon Chen because it is related to an anecdote about King Minh Mang dropping the jade cup.'
+    description: 'Điện Hòn Chén hay điện Huệ Nam tọa lạc trên núi Ngọc Trản, thuộc thôn Ngọc Hồ, phường Hương Hồ, thành phố Huế, tỉnh Thừa Thiên Huế. Trước đây, núi Ngọc Trản có tên là Hương Uyển Sơn, sau đổi tên là Ngọc Trản, dân gian vẫn gọi là Hòn Chén vì có liên quan đến giai thoại vua Minh Mạng đánh rơi chén ngọc.'
   },
   {
     id:15,
     imgSrc: img15,
-    destTitle: 'Nguyen Dinh Chieu pedestrian street',
+    destTitle: 'Phố đi bộ Nguyễn Đình Chiểu',
     location: 'Nguyen Dinh Chieu, Phu Hoi, Hue City, Thua Thien Hue',
-    grade: 'Sights & Landmarks',
+    grade: 'Địa điểm du lịch',
     fees: '4,4',
-    description: 'Nguyen Dinh Chieu Walking Street is also the chosen place to organize many activities to serve all visitors, especially including cruises on the Perfume River. This is considered an outstanding tourist activity to help visitors relax, entertain as well as immerse themselves in the dreamy beauty of the ancient capital.'
+    description: 'Phố đi bộ Nguyễn Đình Chiểu cũng là nơi được chọn để tổ chức nhiều hoạt động phục vụ mọi đối tượng du khách, đặc biệt trong đó có du thuyền trên sông Hương. Đây được xem là hoạt động du lịch nổi bật giúp du khách thư giãn, giải trí cũng như đắm mình trong vẻ đẹp mộng mơ của vùng đất cố đô.'
   },
 ]
 
@@ -248,7 +248,7 @@ const Main = () => {
               </div>
 
               <button className="btn flex" onClick={() => handleItemClick(id)}>
-                DETAILS <HiOutlineClipboardCheck className="icon" />
+                Chi tiết <HiOutlineClipboardCheck className="icon" />
               </button>
             </div>
           </div>

@@ -57,7 +57,7 @@ const Form = () => {
         <div>
           <div data-aos="fade-up" className={styles.wrapForm}>
             <form onSubmit={handleSubmit}>
-              <h1>Form Suggest</h1>
+              <h1>Đề Xuất Cho Chuyến Đi</h1>
               <div className={styles.formData}>
                 <div className={styles.formGroup}>
                   <Input

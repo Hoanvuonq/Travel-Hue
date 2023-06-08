@@ -24,14 +24,14 @@ const Footer = () => {
       <div className="secContent container">
         <div className="contactDiv flex">
           <div data-aos="fade-up" className="text">
-            <small>KEEP IN TOUCH</small>
-            <h2>Travel with us</h2>
+            <small>GIỮ LIÊN LẠC</small>
+            <h2>Đi du lịch với chúng tôi</h2>
           </div>
 
           <div className="inputDiv flex">
-            <input data-aos="fade-up" type="text" placeholder='Enter Email Address'/>
+            <input data-aos="fade-up" type="text" placeholder='Nhập địa chỉ email'/>
             <button data-aos="fade-up" className='btn flex' type='submit'>
-              SEND<FiSend className='icon'/>
+              GỬI<FiSend className='icon'/>
             </button>
           </div>
 
@@ -41,12 +41,12 @@ const Footer = () => {
           <div className="footerIntro flex">
             <div className="logoDiv">
               <a href="#" className='logo flex'>
-                <MdOutlineTravelExplore className='icon'/> Travel.
+                <MdOutlineTravelExplore className='icon'/> Du lịch.
               </a>
             </div>
 
             <div data-aos="fade-up" className="footerParagraph">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus dicta amet ipsum distinctio enim, aperiam dolore! Consequatur aperiam quas recusandae earum itaque dolorum, doloremque totam, sit nulla, impedit perferendis molestiae?
+            Chúng tôi sẽ tổ chức chuyến đi tuyệt vời để bạn khám phá những điểm đến nổi tiếng như Cố đô Huế, Đại Nội, Thiên Mụ Pagoda và Núi Ngự Bình. Bạn sẽ được chiêm ngưỡng cung điện hoàng gia, tham quan các di tích lịch sử và thưởng thức ẩm thực truyền thống độc đáo của miền Trung. Với dịch vụ chuyên nghiệp và đội ngũ hướng dẫn viên giàu kinh nghiệm, chúng tôi cam kết mang đến cho bạn một chuyến đi tuyệt vời và đáng nhớ tại Huế.
             </div>
 
             <div data-aos="fade-up" className="footerSocials">
@@ -60,28 +60,28 @@ const Footer = () => {
           <div className="footerLinks grid">
             <div data-aos="fade-up" data-aos-duration="3000"className="linkGroup">
               <span className="groupTitle">
-                ABOUT US  
+                  VỀ CHÚNG TÔI
               </span>
 
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Services
+                Dịch vụ
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Blogs
+                Bài viết
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Planning
+                Lập kế hoạch
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Tourism 
+                Đề xuất
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Gift Certificate
+                Phiếu quà tặng
               </li>
             </div>
 
@@ -90,28 +90,28 @@ const Footer = () => {
           
             <div data-aos="fade-up" data-aos-duration="4000" className="linkGroup">
               <span className="groupTitle">
-                PARTNERS
+                  ĐỐI TÁC
               </span>
 
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Bookings
+                  Đặt trước
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Rentcars
+                  Thuê xe
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                HostelWorld
+                  Khách sạn
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Trivago
+                  Ẩm thực
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                TripAdvisor
+                  Marketing
               </li>
             </div>
 
@@ -119,35 +119,35 @@ const Footer = () => {
 
             <div data-aos="fade-up" data-aos-duration="5000"className="linkGroup">
               <span className="groupTitle">
-                TERMS OF USE
+              ĐIỀU KHOẢN SỬ DỤNG
               </span>
 
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Terms of use
+                  Điều khoản
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Privacy Policy
+                  Bảo mật
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Cookie Policy
+                  Cookie
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Software 
+                  Phần mềm
               </li>
               <li className="footerList flex">
                 <FiChevronRight className='icon'/>
-                Rule
+                  Luật lệ
               </li>
             </div>
 
           </div>
 
           <div className="footerDiv flex">
-            <small>BEST TRAVEL WEBSITE THEME</small>
+            <small>CHỦ ĐỀ TRANG WEB DU LỊCH TỐT NHẤT</small>
             <small>COPYRIGHT</small>
           </div>
         </div>
