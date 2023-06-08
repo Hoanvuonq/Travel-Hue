@@ -1,8 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import { useOnClickOutside } from 'hooks-react-custom';
 import classNames from 'classnames';
 
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 import style from './input.module.scss';
 
 const Input = (props) => {
@@ -26,8 +26,7 @@ const Input = (props) => {
 
   const [showComplete, setShowComplete] = React.useState(false);
 
-  const refWrap = React.useRef();
-  useOnClickOutside(refWrap, () => {
+  const refWrap = useOnClickOutside(() => {
     setShowComplete(false);
   });
 

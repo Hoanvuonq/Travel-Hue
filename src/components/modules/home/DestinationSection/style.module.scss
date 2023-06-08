@@ -1,0 +1,45 @@
+.containerCarousel {
+}
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #ccc;
+  cursor: pointer;
+}
+.wrapItem {
+  margin-top: 10px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  position: relative;
+
+  .info {
+    position: absolute;
+    bottom: 0;
+    color: #fff;
+    padding: 8px 16px;
+    .title {
+      display: -webkit-box;
+      font-size: 18px;
+      line-height: 26px;
+      color: rgb(255, 255, 255);
+      font-weight: 500;
+      max-height: 78px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-box-align: start;
+      -webkit-line-clamp: 3;
+      word-break: break-word;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+  }
+}

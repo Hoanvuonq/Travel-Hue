@@ -1,0 +1,47 @@
+.wrap {
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 0 24px;
+  background-color: #fff;
+  transition: all linear 0.1s;
+  .item {
+    cursor: pointer;
+    margin-right: 12px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    transition: all linear 0.1s;
+    border-top: 1px solid #e6e6e6;
+    .inner {
+      display: flex;
+      transition: all linear 0.1s;
+      align-items: center;
+    }
+
+    span {
+      flex: 1;
+      line-height: 1;
+    }
+
+    .icon {
+      font-size: 25px;
+    }
+
+    .note {
+      margin: 0;
+      background: #f5f5f5;
+      font-size: 14px;
+      font-weight: 400;
+      transition: all linear 0.1s;
+      padding: 0;
+      max-height: 0;
+      opacity: 0;
+
+      &.show {
+        margin-top: 24px;
+        padding: 24px;
+        max-height: max-content;
+        opacity: 1;
+      }
+    }
+  }
+}
