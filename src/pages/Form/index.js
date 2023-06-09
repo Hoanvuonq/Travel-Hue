@@ -1,25 +1,34 @@
 import * as React from 'react';
 import { FaTimes } from 'react-icons/fa';
-
 import video from '../../Assets/video.mp4';
 import MainLayout from '../../layouts/MainLayout';
 import { routes } from '../../utils/routes';
 import Input from '../../components/Input';
-
 import styles from './form.module.scss';
 import useValidateForm from '../../hooks/useValidateForm';
 import { validateSchema } from './validateSchema';
 import Popup from '../../components/Popup';
+import { DestinationData } from '../../components/DestinationData';
 
 const completeInterests = {
   historicalSites: 'Di tích lịch sử',
-  culturalRelics: 'Di tích văn hoá',
+  culturalRelics: 'Danh lam thắng cảnh',
   naturalPlace: 'Địa điểm thiên nhiên',
   entertainment: 'Vui chơi giải trí',
 };
 
+const interestLocations = {
+  historicalSites: DestinationData.filter((data) => data.historicalSites).map((data) => data.destTitle),
+  culturalRelics: DestinationData.filter((data) => data.culturalRelics).map((data) => data.destTitle),
+  naturalPlace: DestinationData.filter((data) => data.naturalPlace).map((data) => data.destTitle),
+  entertainment: DestinationData.filter((data) => data.entertainment).map((data) => data.destTitle),
+};
+
 const Form = () => {
   const [showPopup, setShowPopup] = React.useState(false);
+  const [interestLocationsList, setInterestLocationsList] = React.useState([]);
+  const [interestInputValue, setInterestInputValue] = React.useState('');
+
   const { errors, values, handleChange, handleSubmit, setFormValues } = useValidateForm({
     initialValue: {
       fullName: '',
@@ -37,13 +46,34 @@ const Form = () => {
     },
   });
 
+  // const handleSelectInterest = (value) => {
+  //   setFormValues('interest', value);
+  //   setInterestLocationsList(interestLocations[value] || []);
+  // };
+
   const handleSelectInterest = (value) => {
     setFormValues('interest', value);
+    setInterestInputValue(completeInterests[value] || '');
+    setInterestLocationsList(interestLocations[value] || []);
   };
+  
+
+  const handleSelectDestination = (destination) => {
+    setFormValues('interest', destination);
+    setInterestLocationsList([]);
+  };
+
+  // const handleClearInterest = () => {
+  //   setFormValues('interest', '');
+  //   setInterestLocationsList([]);
+  // };
 
   const handleClearInterest = () => {
     setFormValues('interest', '');
+    setInterestInputValue('');
+    setInterestLocationsList([]);
   };
+  
 
   const handleClickClosePopup = () => {
     setShowPopup(false);
@@ -84,7 +114,6 @@ const Form = () => {
                     onChange={handleChange}
                     containerClassName={styles.input}
                   />
-
                   <Input
                     label="Desired amount"
                     name="desiredAmount"
@@ -100,15 +129,30 @@ const Form = () => {
                     label="Interest"
                     containerClassName={styles.input}
                     error={errors.interest}
-                    readOnly
                     name="interest"
-                    value={completeInterests[values.interest] || ''}
-                    onChange={handleChange}
+                    value={interestInputValue}
+                    onChange={(e) => setInterestInputValue(e.target.value)}
                     onSelect={handleSelectInterest}
-                    onClickIconRight={handleClearInterest}
+                    onClickIconRight={interestInputValue ? handleClearInterest : null}
                     iconRight={<FaTimes />}
                     completes={completeInterests}
                   />
+                    {interestLocationsList.length > 0 && (
+                      <div>
+                        <h5>Địa danh</h5>
+                        {interestLocationsList.map((location, index) => (
+                          <div
+                            key={index}
+                            onClick={() => {
+                              setInterestInputValue(location);
+                              handleSelectDestination(location);
+                            }}
+                          >
+                            {location}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   <h5>Visiting time</h5>
                   <h6>From</h6>
                   <Input

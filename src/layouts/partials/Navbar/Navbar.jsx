@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import './Navbar.css'
 import {MdOutlineTravelExplore} from 'react-icons/md'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {AiFillCloseCircle} from 'react-icons/ai'
 import {TbGridDots} from 'react-icons/tb'
 import { routes } from '../../../utils/routes'
@@ -40,6 +40,7 @@ const Navbar = () => {
             <button className="btn">
                <Link to={'/Plan'}>LẬP KẾ HOẠCH</Link>
             </button>
+            
 
           </ul>
 
