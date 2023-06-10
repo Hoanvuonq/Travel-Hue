@@ -17,6 +17,13 @@ const completeInterests = {
   naturalPlace: 'Địa điểm thiên nhiên',
   entertainment: 'Vui chơi giải trí',
 };
+const completeAmount = {
+  0: 'Từ 1 đến 3 triệu',
+  1: '3,5 triệu',
+  2: 'Từ 3 đến 5 Triệu',
+  3: 'Từ 5 đến 7 triệu',
+  4: 'Trên 10 triệu',
+};
 
 const interestLocations = {
   historicalSites: DestinationData.filter((data) => data.historicalSites).map(
@@ -32,6 +39,7 @@ const interestLocations = {
 const Form = () => {
   const [selectedLocations, setSelectedLocations] = useState([]);
   const [interestInputValue, setInterestInputValue] = useState('');
+  const [interestInputValueAmount, setInterestInputValueAmount] = useState('');
 
   const { errors, values, handleChange, handleSubmit, setFormValues } = useValidateForm({
     initialValue: {
@@ -58,6 +66,12 @@ const Form = () => {
   const handleSelectInterest = (value) => {
     setFormValues('interest', value);
     setInterestInputValue(completeInterests[value] || '');
+    setSelectedLocations([]);
+  };
+  
+  const handleSelectAmount = (value) => {
+    setFormValues('interest', value);
+    setInterestInputValueAmount(completeAmount[value] || '');
     setSelectedLocations([]);
   };
 
@@ -134,14 +148,18 @@ const Form = () => {
                   />
                   <Input
                     label="Desired amount"
-                    name="amount"
-                    error={errors.amount}
-                    value={values.amount}
-                    onChange={handleChange}
-                    iconRight={<span>VND</span>}
                     containerClassName={styles.input}
+                    error={errors.handleSelectAmount}
+                    name="amount"
+                    value={interestInputValueAmount}
+                    onChange={(e) => setInterestInputValueAmount(e.target.value)}
+                    onSelect={handleSelectAmount}
+                    onClickIconRight={interestInputValueAmount ? handleSelectAmount : null}
+                    iconRight={<FaTimes />}
+                    completes={completeAmount}
                   />
                 </div>
+                
                 <div className={styles.formGroup}>
                   <Input
                     label="Interest"
@@ -155,7 +173,6 @@ const Form = () => {
                     iconRight={<FaTimes />}
                     completes={completeInterests}
                   />
-                 
                 <div>
                     <h5 className={styles.locationTitle}>Locations</h5>
                     {Object.entries(interestLocations).map(([interest, locations]) => (
