@@ -18,14 +18,17 @@ const completeInterests = {
 };
 
 const interestLocations = {
-  historicalSites: DestinationData.filter((data) => data.historicalSites).map((data) => data.destTitle),
-  culturalRelics: DestinationData.filter((data) => data.culturalRelics).map((data) => data.destTitle),
+  historicalSites: DestinationData.filter((data) => data.historicalSites).map(
+    (data) => data.destTitle
+  ),
+  culturalRelics: DestinationData.filter((data) => data.culturalRelics).map(
+    (data) => data.destTitle
+  ),
   naturalPlace: DestinationData.filter((data) => data.naturalPlace).map((data) => data.destTitle),
   entertainment: DestinationData.filter((data) => data.entertainment).map((data) => data.destTitle),
 };
 
 const Form = () => {
-  const [showPopup, setShowPopup] = React.useState(false);
   const [interestLocationsList, setInterestLocationsList] = React.useState([]);
   const [interestInputValue, setInterestInputValue] = React.useState('');
 
@@ -42,7 +45,6 @@ const Form = () => {
     validate: validateSchema,
     onSubmit: (values) => {
       console.log(`file: index.js:59 ~ Form ~ values:`, values);
-      setShowPopup(true);
     },
   });
 
@@ -56,7 +58,6 @@ const Form = () => {
     setInterestInputValue(completeInterests[value] || '');
     setInterestLocationsList(interestLocations[value] || []);
   };
-  
 
   const handleSelectDestination = (destination) => {
     setFormValues('interest', destination);
@@ -72,11 +73,6 @@ const Form = () => {
     setFormValues('interest', '');
     setInterestInputValue('');
     setInterestLocationsList([]);
-  };
-  
-
-  const handleClickClosePopup = () => {
-    setShowPopup(false);
   };
 
   return (
@@ -137,22 +133,23 @@ const Form = () => {
                     iconRight={<FaTimes />}
                     completes={completeInterests}
                   />
-                    {interestLocationsList.length > 0 && (
-                      <div>
-                        <h5>Địa danh</h5>
-                        {interestLocationsList.map((location, index) => (
-                          <div
-                            key={index}
-                            onClick={() => {
-                              setInterestInputValue(location);
-                              handleSelectDestination(location);
-                            }}
-                          >
-                            {location}
-                          </div>
-                        ))}
-                      </div>
-                    )}
+                  {interestLocationsList.length > 0 && (
+                    <div className="py-8">
+                      <h5 className={styles.diadanh}>Địa danh</h5>
+                      {interestLocationsList.map((location, index) => (
+                        <div
+                          className="py-1"
+                          key={index}
+                          onClick={() => {
+                            setInterestInputValue(location);
+                            handleSelectDestination(location);
+                          }}
+                        >
+                          {location}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   <h5>Visiting time</h5>
                   <h6>From</h6>
                   <Input
@@ -182,9 +179,6 @@ const Form = () => {
           </div>
         </div>
       </section>
-      <Popup visible={showPopup} center onClose={handleClickClosePopup}>
-        <div>Popup</div>
-      </Popup>
     </div>
   );
 };

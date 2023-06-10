@@ -38,6 +38,8 @@
   z-index: 10 !important;
   padding: 25px 36px;
   border-radius: 8px;
+  max-height: 70vh;
+  overflow-y: scroll;
 
   .formData {
     display: flex;
@@ -94,4 +96,8 @@
       width: 100%;
     }
   }
+}
+
+.diadanh {
+  padding-bottom: 8px;
 }

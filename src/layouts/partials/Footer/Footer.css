@@ -5,7 +5,7 @@
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
   --textColor: hsl(240, 4%, 36%);
-  --whiteColorDeam: hsl(0, 0%, 93%);
+  --whiteColorDeam: #fff;
   --greyText: rgb(190, 190, 190);
   --inputColor: rgb(239, 239, 239);
   --bodyColor: rgb(240, 240, 240);
@@ -28,10 +28,10 @@
 .footer .videoDiv video {
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .footer .videoDiv::after {
-  content: "";
+  content: '';
   position: absolute;
   background: rgba(10, 84, 107, 0.307);
   top: 0;
@@ -133,7 +133,7 @@
 }
 .footer .secContent .footerCard .footerSocials {
   -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+  column-gap: 0.5rem;
 }
 .footer .secContent .footerCard .footerSocials .icon {
   color: var(--blackColor);
@@ -240,7 +240,7 @@
   }
   .footer .secContent .footerCard .footerIntro .footerSocials {
     -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
+    column-gap: 0.5rem;
   }
   .footer .secContent .footerCard .footerIntro .footerSocials .icon {
     color: var(--textColor);
@@ -253,4 +253,4 @@
     font-size: 16px;
     padding: 5px 0;
   }
-}/*# sourceMappingURL=Footer.css.map */
+} /*# sourceMappingURL=Footer.css.map */
