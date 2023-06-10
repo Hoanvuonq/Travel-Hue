@@ -5,12 +5,23 @@
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid #e6e6e6;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  transition: all 0.4s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .inner {
+  flex: 1;
   .content {
     padding: 16px;
     padding-top: 12px;
+    height: 100%;
   }
   .title {
     overflow: hidden;
@@ -21,8 +32,8 @@
     -webkit-line-clamp: 2;
     color: #212121;
     word-break: break-word;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     line-height: 1.5;
     margin-bottom: 4px;
   }
@@ -38,20 +49,48 @@
     font-size: 14px;
     text-decoration: underline;
   }
+}
+.policy {
+  background-color: rgb(255, 240, 229);
+  color: rgb(255, 91, 0);
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  line-height: 1.44;
+  padding: 0px 8px;
+  height: 24px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 8px;
+  border-radius: 8px;
+  margin: 16px 16px;
+}
 
-  .policy {
-    background-color: rgb(255, 240, 229);
-    color: rgb(255, 91, 0);
-    border: none;
-    border-radius: 6px;
-    font-weight: 500;
-    line-height: 1.44;
-    padding: 0px 8px;
-    height: 24px;
-    font-size: 14px;
-    display: inline-flex;
-    align-items: center;
-    padding: 16px 8px;
-    border-radius: 8px;
-  }
+.location {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.iconMap {
+  line-height: 1.5;
+  color: red;
+  font-size: 16px;
+  margin-right: 8px;
+}
+
+.catalog {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  font-weight: 500;
+  opacity: 0.6;
+}
+
+.price {
+  font-size: 14px;
+  padding-top: 8px;
+  margin-left: 16px;
+  margin-right: 16px;
 }

@@ -1,10 +1,10 @@
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import styles from './popup.module.scss';
 
 const Popup = (props) => {
-  const { center = false, visible, children, onClose } = props;
+  const { center, visible = false, children, onClose } = props;
 
   return visible ? (
     <div className={styles.popupWrap}>
@@ -18,7 +18,7 @@ const Popup = (props) => {
 
 Popup.propTypes = {
   visible: PropTypes.bool,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   onClose: PropTypes.func,
   center: PropTypes.bool,
 };

@@ -5,7 +5,7 @@
   --whiteColor: hsl(0, 0%, 100%);
   --blackColor: hsl(201, 33%, 16%);
   --textColor: hsl(240, 4%, 36%);
-  --whiteColorDeam: hsl(0, 0%, 93%);
+  --whiteColorDeam: #fff;
   --greyText: rgb(190, 190, 190);
   --inputColor: rgb(239, 239, 239);
   --bodyColor: rgb(240, 240, 240);
@@ -37,7 +37,7 @@
   top: 0;
   bottom: 0;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .home .homeContent {
   width: 100%;
@@ -112,7 +112,7 @@
   color: var(--PrimaryColor) !important;
   margin-left: 10px;
 }
-.home .homeContent .cardDiv .input .input[type=range] {
+.home .homeContent .cardDiv .input .input[type='range'] {
   background: blue;
 }
 .home .homeContent .cardDiv .searchOptions {
@@ -122,7 +122,7 @@
   width: max-content;
   bottom: -0.7rem;
   -moz-column-gap: 0.8rem;
-       column-gap: 0.8rem;
+  column-gap: 0.8rem;
   padding: 5px 1rem;
   border-radius: 3rem;
   left: 50%;
@@ -165,7 +165,7 @@
   }
   .home .homeContent .textDiv .homeTitle::after {
     position: absolute;
-    content: "";
+    content: '';
     background: var(--SecondaryColor);
     height: 5px;
     width: 145px;
