@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import video from '../../Assets/video.mp4';
 import MainLayout from '../../layouts/MainLayout';
@@ -7,8 +7,8 @@ import Input from '../../components/Input';
 import styles from './form.module.scss';
 import useValidateForm from '../../hooks/useValidateForm';
 import { validateSchema } from './validateSchema';
-import Popup from '../../components/Popup';
 import { DestinationData } from '../../components/DestinationData';
+import { createUser } from '../../api/fashAPI';
 
 const completeInterests = {
   historicalSites: 'Di tích lịch sử',
@@ -29,29 +29,30 @@ const interestLocations = {
 };
 
 const Form = () => {
-  const [interestLocationsList, setInterestLocationsList] = React.useState([]);
-  const [interestInputValue, setInterestInputValue] = React.useState('');
+  const [interestLocationsList, setInterestLocationsList] = useState([]);
+  const [interestInputValue, setInterestInputValue] = useState('');
 
   const { errors, values, handleChange, handleSubmit, setFormValues } = useValidateForm({
     initialValue: {
       fullName: '',
-      age: '',
-      numberOfPeople: '',
+      age: 0,
+      email: '',
+      numberOfPeople: 0,
       visitingTimeFrom: '',
       visitingTimeTo: '',
       desiredAmount: '',
       interest: '',
     },
     validate: validateSchema,
-    onSubmit: (values) => {
-      console.log(`file: index.js:59 ~ Form ~ values:`, values);
+    onSubmit: async (values) => {
+      try {
+        const response = await createUser(values);
+        console.log(response);
+      } catch (error) {
+        console.error(error);
+      }
     },
   });
-
-  // const handleSelectInterest = (value) => {
-  //   setFormValues('interest', value);
-  //   setInterestLocationsList(interestLocations[value] || []);
-  // };
 
   const handleSelectInterest = (value) => {
     setFormValues('interest', value);
@@ -63,11 +64,6 @@ const Form = () => {
     setFormValues('interest', destination);
     setInterestLocationsList([]);
   };
-
-  // const handleClearInterest = () => {
-  //   setFormValues('interest', '');
-  //   setInterestLocationsList([]);
-  // };
 
   const handleClearInterest = () => {
     setFormValues('interest', '');
@@ -99,6 +95,14 @@ const Form = () => {
                     name="age"
                     error={errors.age}
                     value={values.age}
+                    onChange={handleChange}
+                    containerClassName={styles.input}
+                  />
+                  <Input
+                    label="Email"
+                    name="email"
+                    error={errors.email}
+                    value={values.email}
                     onChange={handleChange}
                     containerClassName={styles.input}
                   />
@@ -150,28 +154,33 @@ const Form = () => {
                       ))}
                     </div>
                   )}
-                  <h5>Visiting time</h5>
-                  <h6>From</h6>
-                  <Input
-                    type="date"
-                    error={errors.visitingTimeFrom}
-                    name="visitingTimeFrom"
-                    value={values.visitingTimeFrom}
-                    onChange={handleChange}
-                    containerClassName={styles.input}
-                  />
-                  <h6>To</h6>
-                  <Input
-                    type="date"
-                    error={errors.visitingTimeTo}
-                    name="visitingTimeTo"
-                    value={values.visitingTimeTo}
-                    onChange={handleChange}
-                    containerClassName={styles.input}
-                  />
+                  <div>
+                    <h5>Visiting time</h5>
+                    <div>
+                      <h6>From</h6>
+                      <Input
+                        type="date"
+                        error={errors.visitingTimeFrom}
+                        name="visitingTimeFrom"
+                        value={values.visitingTimeFrom}
+                        onChange={handleChange}
+                        containerClassName={styles.input}
+                      />
+                    </div>
+                    <div>
+                      <h6>To</h6>
+                      <Input
+                        type="date"
+                        error={errors.visitingTimeTo}
+                        name="visitingTimeTo"
+                        value={values.visitingTimeTo}
+                        onChange={handleChange}
+                        containerClassName={styles.input}
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
-
               <div className={styles.btnSubmit}>
                 <button type="submit">Submit</button>
               </div>

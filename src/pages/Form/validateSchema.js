@@ -10,6 +10,12 @@ export const validateSchema = (values) => {
     errors.age = 'Age is invalid';
   }
 
+  if (!values.email) {
+    errors.email = 'Email is required';
+  } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+    errors.email = 'Email is invalid';
+  }
+
   if (!values.numberOfPeople) {
     errors.numberOfPeople = 'Number Of People is required';
   } else if (!/^\d+$/.test(values.numberOfPeople)) {
