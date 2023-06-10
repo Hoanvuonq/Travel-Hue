@@ -124,8 +124,10 @@
 }
 .footer .secContent .footerCard .logoDiv .logo .icon {
   font-size: 25px;
+  width: 50px;
   color: var(--PrimaryColor);
-  margin-right: 10px;
+  transform: translateY(5px);
+  border-radius: 20px;
 }
 .footer .secContent .footerCard .footerParagraph {
   font-size: 13px;

@@ -5,6 +5,7 @@ import { FiChevronRight, FiSend } from 'react-icons/fi'
 import { MdOutlineTravelExplore } from 'react-icons/md'
 import { AiFillInstagram, AiFillYoutube, AiOutlineTwitter } from 'react-icons/ai'
 import { FaTripadvisor } from 'react-icons/fa'
+import logo from '../../../Assets/logo.PNG'
 
 import Aos from 'aos'
 import 'aos/dist/aos.css'
@@ -41,7 +42,7 @@ const Footer = () => {
           <div className="footerIntro flex">
             <div className="logoDiv">
               <a href="#" className='logo flex'>
-                <MdOutlineTravelExplore className='icon'/> Du lịch.
+              <img src={logo}  alt="logo"className="icon"/>
               </a>
             </div>
 

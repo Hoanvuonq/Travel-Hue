@@ -47,6 +47,7 @@
 }
 .header .logo .icon {
   font-size: 25px;
+  width: 50px;
   color: var(--PrimaryColor);
   transform: translateY(5px);
 }

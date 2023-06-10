@@ -6,6 +6,7 @@ import {AiFillCloseCircle} from 'react-icons/ai'
 import {TbGridDots} from 'react-icons/tb'
 import { routes } from '../../../utils/routes'
 import classNames from 'classnames'
+import logo from '../../../Assets/logo.PNG'
 
 const Navbar = () => {
   const [active, setActive] = useState("navBar")
@@ -25,7 +26,7 @@ const Navbar = () => {
 
         <div className="logoDiv">
            <Link to={routes.HOME} className="logo flex">
-            <h1><MdOutlineTravelExplore className="icon"/>Travelby.</h1>
+            <h1><img src={logo}  alt="logo"className="icon"/></h1>
           </Link>
         </div>
 
