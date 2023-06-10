@@ -9,6 +9,7 @@ import useValidateForm from '../../hooks/useValidateForm';
 import { validateSchema } from './validateSchema';
 import { DestinationData } from '../../components/DestinationData';
 import { createUser } from '../../api/fashAPI';
+import CheckBox from '../../components/CheckBox';
 
 const completeInterests = {
   historicalSites: 'Di tích lịch sử',
@@ -29,18 +30,18 @@ const interestLocations = {
 };
 
 const Form = () => {
-  const [interestLocationsList, setInterestLocationsList] = useState([]);
+  const [selectedLocations, setSelectedLocations] = useState([]);
   const [interestInputValue, setInterestInputValue] = useState('');
 
   const { errors, values, handleChange, handleSubmit, setFormValues } = useValidateForm({
     initialValue: {
-      fullName: '',
+      name: '',
       age: 0,
       email: '',
-      numberOfPeople: 0,
-      visitingTimeFrom: '',
-      visitingTimeTo: '',
-      desiredAmount: '',
+      numberofpp: 0,
+      ngay_den: '',
+      ngay_di: '',
+      amount: '',
       interest: '',
     },
     validate: validateSchema,
@@ -57,18 +58,35 @@ const Form = () => {
   const handleSelectInterest = (value) => {
     setFormValues('interest', value);
     setInterestInputValue(completeInterests[value] || '');
-    setInterestLocationsList(interestLocations[value] || []);
+    setSelectedLocations([]);
   };
 
-  const handleSelectDestination = (destination) => {
-    setFormValues('interest', destination);
-    setInterestLocationsList([]);
+  const handleSelectLocation = (location) => {
+    const index = selectedLocations.indexOf(location);
+    if (index > -1) {
+      setSelectedLocations((prevLocations) =>
+        prevLocations.filter((prevLocation) => prevLocation !== location)
+      );
+    } else {
+      setSelectedLocations((prevLocations) => [...prevLocations, location]);
+    }
   };
 
   const handleClearInterest = () => {
     setFormValues('interest', '');
     setInterestInputValue('');
-    setInterestLocationsList([]);
+    setSelectedLocations([]);
+  };
+
+  const handleCheckBoxChange = (location) => {
+    const index = selectedLocations.indexOf(location);
+    if (index > -1) {
+      setSelectedLocations((prevLocations) =>
+        prevLocations.filter((prevLocation) => prevLocation !== location)
+      );
+    } else {
+      setSelectedLocations((prevLocations) => [...prevLocations, location]);
+    }
   };
 
   return (
@@ -84,9 +102,9 @@ const Form = () => {
                 <div className={styles.formGroup}>
                   <Input
                     label="Full Name"
-                    name="fullName"
-                    error={errors.fullName}
-                    value={values.fullName}
+                    name="name"
+                    error={errors.name}
+                    value={values.name}
                     onChange={handleChange}
                     containerClassName={styles.input}
                   />
@@ -107,18 +125,18 @@ const Form = () => {
                     containerClassName={styles.input}
                   />
                   <Input
-                    error={errors.numberOfPeople}
+                    error={errors.numberofpp}
                     label="Number of people"
-                    name="numberOfPeople"
-                    value={values.numberOfPeople}
+                    name="numberofpp"
+                    value={values.numberofpp}
                     onChange={handleChange}
                     containerClassName={styles.input}
                   />
                   <Input
                     label="Desired amount"
-                    name="desiredAmount"
-                    error={errors.desiredAmount}
-                    value={values.desiredAmount}
+                    name="amount"
+                    error={errors.amount}
+                    value={values.amount}
                     onChange={handleChange}
                     iconRight={<span>VND</span>}
                     containerClassName={styles.input}
@@ -137,32 +155,34 @@ const Form = () => {
                     iconRight={<FaTimes />}
                     completes={completeInterests}
                   />
-                  {interestLocationsList.length > 0 && (
-                    <div className="py-8">
-                      <h5 className={styles.diadanh}>Địa danh</h5>
-                      {interestLocationsList.map((location, index) => (
-                        <div
-                          className="py-1"
-                          key={index}
-                          onClick={() => {
-                            setInterestInputValue(location);
-                            handleSelectDestination(location);
-                          }}
-                        >
-                          {location}
+                 
+                <div>
+                    <h5 className={styles.locationTitle}>Locations</h5>
+                    {Object.entries(interestLocations).map(([interest, locations]) => (
+                      interest === values.interest && (
+                        <div className={styles.locationCheckbox} key={interest}>
+                          {locations.map((location) => (
+                            <div className={styles.checkboxItem} key={location}>
+                              <CheckBox
+                                label={location}
+                                value={location}
+                                onChange={() => handleCheckBoxChange(location)}
+                              />
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
-                  )}
+                      )
+                    ))}
+                  </div>
                   <div>
                     <h5>Visiting time</h5>
                     <div>
                       <h6>From</h6>
                       <Input
                         type="date"
-                        error={errors.visitingTimeFrom}
-                        name="visitingTimeFrom"
-                        value={values.visitingTimeFrom}
+                        error={errors.ngay_den}
+                        name="ngay_den"
+                        value={values.ngay_den}
                         onChange={handleChange}
                         containerClassName={styles.input}
                       />
@@ -171,9 +191,9 @@ const Form = () => {
                       <h6>To</h6>
                       <Input
                         type="date"
-                        error={errors.visitingTimeTo}
-                        name="visitingTimeTo"
-                        value={values.visitingTimeTo}
+                        error={errors.ngay_di}
+                        name="ngay_di"
+                        value={values.ngay_di}
                         onChange={handleChange}
                         containerClassName={styles.input}
                       />

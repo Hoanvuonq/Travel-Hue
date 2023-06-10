@@ -1,8 +1,8 @@
 export const validateSchema = (values) => {
   let errors = {};
 
-  if (!values.fullName) {
-    errors.fullName = 'Full Name is required';
+  if (!values.name) {
+    errors.name = 'Full Name is required';
   }
   if (!values.age) {
     errors.age = 'Age is required';
@@ -16,27 +16,27 @@ export const validateSchema = (values) => {
     errors.email = 'Email is invalid';
   }
 
-  if (!values.numberOfPeople) {
-    errors.numberOfPeople = 'Number Of People is required';
-  } else if (!/^\d+$/.test(values.numberOfPeople)) {
-    errors.numberOfPeople = 'Number Of People is invalid';
+  if (!values.numberofpp) {
+    errors.numberofpp = 'Number Of People is required';
+  } else if (!/^\d+$/.test(values.numberofpp)) {
+    errors.numberofpp = 'Number Of People is invalid';
   }
 
-  if (!values.visitingTimeFrom) {
-    errors.visitingTimeFrom = 'Visiting Time From is required';
+  if (!values.ngay_den) {
+    errors.ngay_den = 'Visiting Time From is required';
   }
-  if (!values.visitingTimeTo) {
-    errors.visitingTimeTo = 'Visiting Time To is required';
+  if (!values.ngay_di) {
+    errors.ngay_di = 'Visiting Time To is required';
   } else if (
-    new Date(values.visitingTimeTo).getTime() < new Date(values.visitingTimeFrom).getTime()
+    new Date(values.ngay_di).getTime() < new Date(values.ngay_den).getTime()
   ) {
-    errors.visitingTimeTo = 'Visiting time to must be greater than time from';
+    errors.ngay_di = 'Visiting time to must be greater than time from';
   }
 
-  if (!values.desiredAmount) {
-    errors.desiredAmount = 'Desired Amount is required';
-  } else if (!/^\d+$/.test(values.desiredAmount)) {
-    errors.desiredAmount = 'Desired Amount is invalid';
+  if (!values.amount) {
+    errors.amount = 'Desired Amount is required';
+  } else if (!/^\d+$/.test(values.amount)) {
+    errors.amount = 'Desired Amount is invalid';
   }
 
   if (!values.interest) {
