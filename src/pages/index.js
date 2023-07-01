@@ -6,11 +6,9 @@ import Plan from './Plan/Plan';
 import Form from './Form';
 import Blog from './Blog/Blog';
 import Travel from './Travel/Travel';
-import Dashboard from './Admin/Dashboard';
-import AdminPage from './Admin';
-import UserManagementPage from './Admin/user-management';
+import { routeAdmin } from './Admin/route';
 
-const pages = [Home, Plan, Form, Blog, Travel, AdminPage, Dashboard, UserManagementPage];
+const pages = [Home, Plan, Form, Blog, Travel, ...routeAdmin];
 
 const NextPages = () => {
   return (

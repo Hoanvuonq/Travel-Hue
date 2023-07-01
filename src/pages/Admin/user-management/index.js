@@ -5,6 +5,7 @@ import { Typography } from '@material-tailwind/react';
 import MyBreadcrumbs from '../../../components/Breadcrumbs';
 import MyTable from '../../../components/Table';
 import { TABLE_HEAD, TABLE_ROWS } from '../../../components/Table/rawData';
+import { AiTwotoneHome } from 'react-icons/ai';
 
 const UserManagementPage = () => {
   return (
@@ -13,7 +14,7 @@ const UserManagementPage = () => {
       <MyBreadcrumbs
         className="mt-2"
         breadcrumbs={[
-          { title: 'Dashboard', path: routes.ADMIN_DASHBOARD },
+          { icon: <AiTwotoneHome size={18} />, title: 'Dashboard', path: routes.ADMIN_DASHBOARD },
           { title: 'User Management', path: routes.ADMIN_USER_MANAGEMENT },
         ]}
       />

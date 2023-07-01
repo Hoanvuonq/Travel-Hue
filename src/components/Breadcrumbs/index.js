@@ -16,9 +16,10 @@ const MyBreadcrumbs = ({ className, breadcrumbs = [] }) => {
             onClick={() => navigate(item.path)}
             variant="text"
             color="blue-gray"
-            className={classNames('px-2 py-1',location.pathname !== item.path && 'opacity-50')}
+            className={classNames('px-2 py-1 flex items-center gap-2',location.pathname !== item.path && 'opacity-50')}
           >
-            {item.title}
+            {item.icon}
+            <p>{item.title}</p>
           </Button>
         ))}
       </Breadcrumbs>
