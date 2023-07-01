@@ -146,6 +146,7 @@
 
       .footerSocials {
         column-gap: 0.5rem;
+        display: flex;
 
         .icon {
           color: var(--blackColor);
@@ -290,6 +291,7 @@
 
           .footerSocials {
             column-gap: 0.5rem;
+            display: flex;
             .icon {
               color: var(--textColor);
               font-size: 25px;
