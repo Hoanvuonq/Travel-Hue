@@ -11,7 +11,9 @@
   --bodyColor: rgb(240, 240, 240);
   --cardBG: rgb(225, 225, 255);
 }
-
+.text-color {
+  color: var(--textColor);
+}
 .footer {
   width: 100%;
   position: relative;
