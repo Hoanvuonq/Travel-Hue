@@ -6,8 +6,9 @@ import Plan from './Plan/Plan';
 import Form from './Form';
 import Blog from './Blog/Blog';
 import Travel from './Travel/Travel';
+import { routeAdmin } from './Admin/route';
 
-const pages = [Home, Plan, Form, Blog, Travel,];
+const pages = [Home, Plan, Form, Blog, Travel, ...routeAdmin];
 
 const NextPages = () => {
   return (

@@ -1,20 +1,21 @@
-import React, {useEffect} from 'react'
-import './Footer.css'
-import video2 from '../../../Assets/video2.mp4'
-import { FiChevronRight, FiSend } from 'react-icons/fi'
-import { MdOutlineTravelExplore } from 'react-icons/md'
-import { AiFillInstagram, AiFillYoutube, AiOutlineTwitter } from 'react-icons/ai'
-import { FaTripadvisor } from 'react-icons/fa'
-import logo from '../../../Assets/logo.PNG'
+import React, { useEffect } from 'react';
+import './Footer.css';
+import video2 from '../../../Assets/video2.mp4';
+import { FiChevronRight, FiSend } from 'react-icons/fi';
+import { MdOutlineTravelExplore } from 'react-icons/md';
+import { AiFillInstagram, AiFillYoutube, AiOutlineTwitter } from 'react-icons/ai';
+import { FaTripadvisor } from 'react-icons/fa';
+import logo from '../../../Assets/logo.PNG';
 
-import Aos from 'aos'
-import 'aos/dist/aos.css'
+import Aos from 'aos';
+import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
+import { routes } from '../../../utils/routes';
 
 const Footer = () => {
-
-  useEffect(()=>{
-    Aos.init({duration: 2000})
-  }, [])
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
 
   return (
     <section className="footer">
@@ -30,121 +31,122 @@ const Footer = () => {
           </div>
 
           <div className="inputDiv flex">
-            <input data-aos="fade-up" type="text" placeholder='Nhập địa chỉ email'/>
-            <button data-aos="fade-up" className='btn flex' type='submit'>
-              GỬI<FiSend className='icon'/>
+            <input data-aos="fade-up" type="text" placeholder="Nhập địa chỉ email" />
+            <button data-aos="fade-up" className="btn flex" type="submit">
+              GỬI
+              <FiSend className="icon" />
             </button>
           </div>
-
         </div>
 
         <div className="footerCard flex">
           <div className="footerIntro flex">
             <div className="logoDiv">
-              <a href="#" className='logo flex'>
-              <img src={logo}  alt="logo"className="icon"/>
+              <a href="#" className="logo flex">
+                <img src={logo} alt="logo" className="icon" />
               </a>
             </div>
 
             <div data-aos="fade-up" className="footerParagraph">
-            Chúng tôi sẽ tổ chức chuyến đi tuyệt vời để bạn khám phá những điểm đến nổi tiếng như Cố đô Huế, Đại Nội, Thiên Mụ Pagoda và Núi Ngự Bình. Bạn sẽ được chiêm ngưỡng cung điện hoàng gia, tham quan các di tích lịch sử và thưởng thức ẩm thực truyền thống độc đáo của miền Trung. Với dịch vụ chuyên nghiệp và đội ngũ hướng dẫn viên giàu kinh nghiệm, chúng tôi cam kết mang đến cho bạn một chuyến đi tuyệt vời và đáng nhớ tại Huế.
+              Chúng tôi sẽ tổ chức chuyến đi tuyệt vời để bạn khám phá những điểm đến nổi tiếng như
+              Cố đô Huế, Đại Nội, Thiên Mụ Pagoda và Núi Ngự Bình. Bạn sẽ được chiêm ngưỡng cung
+              điện hoàng gia, tham quan các di tích lịch sử và thưởng thức ẩm thực truyền thống độc
+              đáo của miền Trung. Với dịch vụ chuyên nghiệp và đội ngũ hướng dẫn viên giàu kinh
+              nghiệm, chúng tôi cam kết mang đến cho bạn một chuyến đi tuyệt vời và đáng nhớ tại
+              Huế.
             </div>
 
             <div data-aos="fade-up" className="footerSocials">
-              <AiOutlineTwitter className='icon'/>
-              <AiFillYoutube className='icon'/>
-              <AiFillInstagram className='icon'/>
-              <FaTripadvisor className='icon'/>
+              <AiOutlineTwitter className="icon" />
+              <AiFillYoutube className="icon" />
+              <AiFillInstagram className="icon" />
+              <FaTripadvisor className="icon" />
             </div>
           </div>
-{/* -------------group 1 footer------ */}
+          {/* -------------group 1 footer------ */}
           <div className="footerLinks grid">
-            <div data-aos="fade-up" data-aos-duration="3000"className="linkGroup">
-              <span className="groupTitle">
-                  VỀ CHÚNG TÔI
-              </span>
+            <div data-aos="fade-up" data-aos-duration="3000" className="linkGroup">
+              <span className="groupTitle">VỀ CHÚNG TÔI</span>
 
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
+                <FiChevronRight className="icon" />
                 Dịch vụ
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
+                <FiChevronRight className="icon" />
                 Bài viết
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
+                <FiChevronRight className="icon" />
                 Lập kế hoạch
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
+                <FiChevronRight className="icon" />
                 Đề xuất
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
+                <FiChevronRight className="icon" />
                 Phiếu quà tặng
               </li>
+              <li className="footerList flex">
+                <FiChevronRight className="icon" />
+                <Link to={routes.ADMIN} className='text-color'>Admin</Link>
+              </li>
             </div>
 
-          
-{/* -------------group 2 footer------ */}
-          
+            {/* -------------group 2 footer------ */}
+
             <div data-aos="fade-up" data-aos-duration="4000" className="linkGroup">
-              <span className="groupTitle">
-                  ĐỐI TÁC
-              </span>
+              <span className="groupTitle">ĐỐI TÁC</span>
 
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
-                  Đặt trước
+                <FiChevronRight className="icon" />
+                Đặt trước
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
-                  Thuê xe
+                <FiChevronRight className="icon" />
+                Thuê xe
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
-                  Khách sạn
+                <FiChevronRight className="icon" />
+                Khách sạn
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
-                  Ẩm thực
+                <FiChevronRight className="icon" />
+                Ẩm thực
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
-                  Marketing
+                <FiChevronRight className="icon" />
+                Marketing
               </li>
             </div>
 
-{/* -------------group 3 footer------ */}
+            {/* -------------group 3 footer------ */}
 
-            <div data-aos="fade-up" data-aos-duration="5000"className="linkGroup">
-              <span className="groupTitle">
-              ĐIỀU KHOẢN SỬ DỤNG
-              </span>
+            <div data-aos="fade-up" data-aos-duration="5000" className="linkGroup">
+              <span className="groupTitle">ĐIỀU KHOẢN SỬ DỤNG</span>
 
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
-                  Điều khoản
+                <FiChevronRight className="icon" />
+                Điều khoản
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
-                  Bảo mật
+                <FiChevronRight className="icon" />
+                Bảo mật
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
-                  Cookie
+                <FiChevronRight className="icon" />
+                Cookie
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
-                  Phần mềm
+                <FiChevronRight className="icon" />
+                Phần mềm
               </li>
               <li className="footerList flex">
-                <FiChevronRight className='icon'/>
-                  Luật lệ
+                <FiChevronRight className="icon" />
+                Luật lệ
               </li>
             </div>
-
           </div>
 
           <div className="footerDiv flex">
@@ -154,7 +156,7 @@ const Footer = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
