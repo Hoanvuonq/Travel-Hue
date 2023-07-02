@@ -61,7 +61,7 @@ const Form = () => {
     onSubmit: async (values) => {
       try {
         console.log(values);
-        // const response = await createUser(values);
+        const response = await createUser(values);
         naviga(routes.PROPOSE)
       } catch (error) {
         console.error(error);
