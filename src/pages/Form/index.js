@@ -10,6 +10,10 @@ import { validateSchema } from './validateSchema';
 import { DestinationData } from '../../components/DestinationData';
 import { createUser } from '../../api/fashAPI';
 import CheckBox from '../../components/CheckBox';
+import { addPropose } from '../../redux/slice/propose';
+import data from '../../data/destinations.json';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const completeInterests = {
   historicalSites: 'Di tích lịch sử',
@@ -40,7 +44,8 @@ const Form = () => {
   const [selectedLocations, setSelectedLocations] = useState([]);
   const [interestInputValue, setInterestInputValue] = useState('');
   const [interestInputValueAmount, setInterestInputValueAmount] = useState('');
-
+  const dispatch = useDispatch();
+  const naviga = useNavigate()
   const { errors, values, handleChange, handleSubmit, setFormValues } = useValidateForm({
     initialValue: {
       name: '',
@@ -55,35 +60,26 @@ const Form = () => {
     validate: validateSchema,
     onSubmit: async (values) => {
       try {
-        const response = await createUser(values);
-        console.log(response);
+        console.log(values);
+        // const response = await createUser(values);
+        naviga(routes.PROPOSE)
       } catch (error) {
         console.error(error);
       }
     },
   });
+  console.log(`file: index.js:69 ~ Form ~ errors:`, errors)
 
   const handleSelectInterest = (value) => {
     setFormValues('interest', value);
     setInterestInputValue(completeInterests[value] || '');
     setSelectedLocations([]);
   };
-  
+
   const handleSelectAmount = (value) => {
     setFormValues('interest', value);
     setInterestInputValueAmount(completeAmount[value] || '');
     setSelectedLocations([]);
-  };
-
-  const handleSelectLocation = (location) => {
-    const index = selectedLocations.indexOf(location);
-    if (index > -1) {
-      setSelectedLocations((prevLocations) =>
-        prevLocations.filter((prevLocation) => prevLocation !== location)
-      );
-    } else {
-      setSelectedLocations((prevLocations) => [...prevLocations, location]);
-    }
   };
 
   const handleClearInterest = () => {
@@ -92,7 +88,7 @@ const Form = () => {
     setSelectedLocations([]);
   };
 
-  const handleCheckBoxChange = (location) => {
+  const handleCheckBoxChange = (checked, location) => {
     const index = selectedLocations.indexOf(location);
     if (index > -1) {
       setSelectedLocations((prevLocations) =>
@@ -101,6 +97,8 @@ const Form = () => {
     } else {
       setSelectedLocations((prevLocations) => [...prevLocations, location]);
     }
+    // checked && dispatch(addPropose(234));
+    checked && dispatch(addPropose(DestinationData.find((i) => i.destTitle === location)));
   };
 
   return (
@@ -159,7 +157,7 @@ const Form = () => {
                     completes={completeAmount}
                   />
                 </div>
-                
+
                 <div className={styles.formGroup}>
                   <Input
                     label="Interest"
@@ -173,23 +171,24 @@ const Form = () => {
                     iconRight={<FaTimes />}
                     completes={completeInterests}
                   />
-                <div>
+                  <div>
                     <h5 className={styles.locationTitle}>Locations</h5>
-                    {Object.entries(interestLocations).map(([interest, locations]) => (
-                      interest === values.interest && (
-                        <div className={styles.locationCheckbox} key={interest}>
-                          {locations.map((location) => (
-                            <div className={styles.checkboxItem} key={location}>
-                              <CheckBox
-                                label={location}
-                                value={location}
-                                onChange={() => handleCheckBoxChange(location)}
-                              />
-                            </div>
-                          ))}
-                        </div>
-                      )
-                    ))}
+                    {Object.entries(interestLocations).map(
+                      ([interest, locations]) =>
+                        interest === values.interest && (
+                          <div className={styles.locationCheckbox} key={interest}>
+                            {locations.map((location) => (
+                              <div className={styles.checkboxItem} key={location}>
+                                <CheckBox
+                                  label={location}
+                                  value={location}
+                                  onChange={(e) => handleCheckBoxChange(e.target.checked, location)}
+                                />
+                              </div>
+                            ))}
+                          </div>
+                        )
+                    )}
                   </div>
                   <div>
                     <h5>Visiting time</h5>

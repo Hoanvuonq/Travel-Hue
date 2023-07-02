@@ -13,7 +13,7 @@ import { FaMapMarkerAlt, FaTimes } from 'react-icons/fa';
 import Image from '../../../Image';
 import { AppUtils } from '../../../../utils/AppUtils';
 
-const AnyReactComponent = ({ text }) => <div>{text}</div>;
+
 const SpecialTourSection = (props) => {
   const {} = props;
   const [currentTour, setCurrentTour] = React.useState({});
