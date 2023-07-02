@@ -45,7 +45,7 @@
   padding: 1rem;
   border-radius: 10px;
   align-items: center;
-  background: var(--cardBG);
+  background: rgb(245, 245, 247);
   box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
   overflow: hidden;
 }
