@@ -33,11 +33,11 @@ export const validateSchema = (values) => {
     errors.ngay_di = 'Visiting time to must be greater than time from';
   }
 
-  if (!values.amount) {
-    errors.amount = 'Desired Amount is required';
-  } else if (!/^\d+$/.test(values.amount)) {
-    errors.amount = 'Desired Amount is invalid';
-  }
+  // if (!values.amount) {
+  //   errors.amount = 'Desired Amount is required';
+  // } else if (!/^\d+$/.test(values.amount)) {
+  //   errors.amount = 'Desired Amount is invalid';
+  // }
 
   if (!values.interest) {
     errors.interest = 'Interest is required';

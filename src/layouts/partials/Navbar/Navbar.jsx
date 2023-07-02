@@ -25,18 +25,21 @@ const Navbar = () => {
       <header className={classNames("header flex")}>
 
         <div className="logoDiv">
-           <Link to={routes.HOME} className="logo flex">
+           <Link to={routes.HOME} className="flex logo">
             <h1><img src={logo}  alt="logo"className="icon"/></h1>
           </Link>
         </div>
 
         <div className={active}>
-          <ul className="navLists flex">
+          <ul className="flex navLists">
             <li className="navItem">
               <Link to={routes.HOME} className="navLink">Trang chủ</Link>
             </li>
             <li className="navItem">
                <Link to={routes.FORM} className="navLink">Đề xuất</Link>
+            </li>
+            <li className="navItem">
+               <Link to={routes.PROPOSE} className="navLink">Propose</Link>
             </li>
             <button className="btn">
                <Link to={'/Plan'}>LẬP KẾ HOẠCH</Link>
